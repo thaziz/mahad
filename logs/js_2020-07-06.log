@@ -1,0 +1,118 @@
+2020-07-06 11:00:59: adm  act submit call
+2020-07-06 11:00:59: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-06 11:00:59: Status error
+2020-07-06 11:00:59: Error Internal Server Error
+2020-07-06 11:01:31: adm  act submit call
+2020-07-06 11:01:31: JQXHR response text array(4) {
+  [0]=>
+  array(6) {
+    [0]=>
+    string(17) "siapakah tuhanmu?"
+    [1]=>
+    string(1) "A"
+    [2]=>
+    string(5) "Allah"
+    [3]=>
+    string(8) "Muhammad"
+    [4]=>
+    string(6) "Jibril"
+    [5]=>
+    string(3) "Jin"
+  }
+  [1]=>
+  array(6) {
+    [0]=>
+    string(16) "Siapakah nabimu?"
+    [1]=>
+    string(1) "B"
+    [2]=>
+    string(5) "Allah"
+    [3]=>
+    string(8) "Muhammad"
+    [4]=>
+    string(6) "Jibril"
+    [5]=>
+    string(3) "Jin"
+  }
+  ["result"]=>
+  array(2) {
+    [0]=>
+    array(11) {
+      ["sd_soal"]=>
+      string(17) "siapakah tuhanmu?"
+      ["sd_kunci"]=>
+      string(1) "A"
+      ["sd_a"]=>
+      string(5) "Allah"
+      ["sd_b"]=>
+      string(8) "Muhammad"
+      ["sd_c"]=>
+      string(6) "Jibril"
+      ["sd_d"]=>
+      string(3) "Jin"
+      ["sd_master_soal"]=>
+      string(3) "107"
+      ["sd_type"]=>
+      string(7) "pilihan"
+      ["sd_detailid"]=>
+      int(1)
+      ["sd_no"]=>
+      int(1)
+      ["xx"]=>
+      string(2) "١"
+    }
+    [1]=>
+    array(11) {
+      ["sd_soal"]=>
+      string(16) "Siapakah nabimu?"
+      ["sd_kunci"]=>
+      string(1) "B"
+      ["sd_a"]=>
+      string(5) "Allah"
+      ["sd_b"]=>
+      string(8) "Muhammad"
+      ["sd_c"]=>
+      string(6) "Jibril"
+      ["sd_d"]=>
+      string(3) "Jin"
+      ["sd_master_soal"]=>
+      string(3) "107"
+      ["sd_type"]=>
+      string(7) "pilihan"
+      ["sd_detailid"]=>
+      int(2)
+      ["sd_no"]=>
+      int(2)
+      ["xx"]=>
+      string(2) "٢"
+    }
+  }
+  ["type"]=>
+  string(7) "pilihan"
+}
+
+2020-07-06 11:01:31: Status parsererror
+2020-07-06 11:01:31: Error SyntaxError: Unexpected token a in JSON at position 0

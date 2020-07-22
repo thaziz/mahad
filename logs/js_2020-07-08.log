@@ -1,0 +1,51 @@
+2020-07-08 07:24:48: adm  act submit call
+2020-07-08 07:24:48: JQXHR response text array(2) {
+  [0]=>
+  array(6) {
+    [0]=>
+    string(17) "siapakah tuhanmu?"
+    [1]=>
+    string(1) "A"
+    [2]=>
+    string(5) "Allah"
+    [3]=>
+    string(8) "Muhammad"
+    [4]=>
+    string(6) "Jibril"
+    [5]=>
+    string(3) "Jin"
+  }
+  [1]=>
+  array(6) {
+    [0]=>
+    string(16) "Siapakah nabimu?"
+    [1]=>
+    string(1) "B"
+    [2]=>
+    string(5) "Allah"
+    [3]=>
+    string(8) "Muhammad"
+    [4]=>
+    string(6) "Jibril"
+    [5]=>
+    string(3) "Jin"
+  }
+}
+
+2020-07-08 07:24:48: Status parsererror
+2020-07-08 07:24:48: Error SyntaxError: Unexpected token a in JSON at position 0
+2020-07-08 07:25:30: adm  act submit call
+2020-07-08 07:25:30: JQXHR response text array(2) {
+  ["type"]=>
+  string(2) "bs"
+  ["header"]=>
+  string(1) "1"
+}
+
+2020-07-08 07:25:30: Status parsererror
+2020-07-08 07:25:30: Error SyntaxError: Unexpected token a in JSON at position 0
+2020-07-08 07:26:22: adm  act submit call
+2020-07-08 07:26:22: JQXHR response text int(1)
+
+2020-07-08 07:26:22: Status parsererror
+2020-07-08 07:26:22: Error SyntaxError: Unexpected token i in JSON at position 0

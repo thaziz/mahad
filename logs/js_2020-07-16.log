@@ -1,0 +1,6 @@
+2020-07-16 20:38:16: adm  act submit call
+2020-07-16 20:38:16: JQXHR response text <br />
+<b>Warning</b>:  POST Content-Length of 17051074 bytes exceeds the limit of 8388608 bytes in <b>Unknown</b> on line <b>0</b><br />
+{"status":"ERROR","errors":"<p>You did not select a file to upload.<\/p>"}
+2020-07-16 20:38:16: Status parsererror
+2020-07-16 20:38:16: Error SyntaxError: Unexpected token < in JSON at position 0

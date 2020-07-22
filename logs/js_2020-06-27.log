@@ -1,0 +1,929 @@
+2020-06-27 10:23:06: adm  act submit call
+2020-06-27 10:23:06: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'else' (T_ELSE)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 112</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 10:23:06: Status error
+2020-06-27 10:23:06: Error Internal Server Error
+2020-06-27 10:23:24: adm  act submit call
+2020-06-27 10:23:24: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'else' (T_ELSE)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 112</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 10:23:24: Status error
+2020-06-27 10:23:24: Error Internal Server Error
+2020-06-27 10:37:36: adm  act submit call
+2020-06-27 10:37:36: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected '}'</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 277</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 10:37:36: Status error
+2020-06-27 10:37:36: Error Internal Server Error
+2020-06-27 11:14:00: adm  act submit call
+2020-06-27 11:14:00: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal_model::insert_batch(), 2 passed in C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php on line 120 and exactly 3 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 272</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 120<br />
+			Function: insert_batch			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 11:14:00: Status error
+2020-06-27 11:14:00: Error Internal Server Error
+2020-06-27 11:14:27: adm  act submit call
+2020-06-27 11:14:27: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal_model::insert_batch(), 2 passed in C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php on line 120 and exactly 3 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 272</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 120<br />
+			Function: insert_batch			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 11:14:27: Status error
+2020-06-27 11:14:27: Error Internal Server Error
+2020-06-27 11:16:40: adm  act submit call
+2020-06-27 11:16:40: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal_model::insert_batch(), 2 passed in C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php on line 120 and exactly 3 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 272</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 120<br />
+			Function: insert_batch			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 11:16:40: Status error
+2020-06-27 11:16:40: Error Internal Server Error
+2020-06-27 11:17:55: adm  act submit call
+2020-06-27 11:17:55: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: master_id</p>
+<p>Filename: models/Bank_soal_model.php</p>
+<p>Line Number: 317</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php<br />
+			Line: 317<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 120<br />
+			Function: insert_batch			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1054</p><p>Unknown column 'no' in 'field list'</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`, `no`) VALUES ('siapakah tuhanmu?', 'Allah', 'Muhammad', 'Jibril', 'Jin', '74', 'pilihan', 1, 1)</p><p>Filename: C:/xampp/htdocs/outbound/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-06-27 11:17:55: Status error
+2020-06-27 11:17:55: Error Internal Server Error
+2020-06-27 11:18:30: adm  act submit call
+2020-06-27 11:18:30: JQXHR response text <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1054</p><p>Unknown column 'no' in 'field list'</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`, `no`) VALUES ('siapakah tuhanmu?', 'Allah', 'Muhammad', 'Jibril', 'Jin', '74', 'pilihan', 1, 1)</p><p>Filename: C:/xampp/htdocs/outbound/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-06-27 11:18:30: Status error
+2020-06-27 11:18:30: Error Internal Server Error
+2020-06-27 11:27:52: adm  act submit call
+2020-06-27 11:27:52: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'echo' (T_ECHO), expecting function (T_FUNCTION) or const (T_CONST)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 322</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 11:27:52: Status error
+2020-06-27 11:27:52: Error Internal Server Error
+2020-06-27 12:55:35: adm  act submit call
+2020-06-27 12:55:35: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'public' (T_PUBLIC)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 362</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 12:55:35: Status error
+2020-06-27 12:55:35: Error Internal Server Error
+2020-06-27 17:32:25: adm  act submit call
+2020-06-27 17:32:25: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected '$data' (T_VARIABLE)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 277</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 17:32:25: Status error
+2020-06-27 17:32:25: Error Internal Server Error
+2020-06-27 17:32:57: adm  act submit call
+2020-06-27 17:32:57: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'public' (T_PUBLIC)</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 314</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 17:32:57: Status error
+2020-06-27 17:32:57: Error Internal Server Error
+2020-06-27 17:57:26: adm  act submit call
+2020-06-27 17:57:26: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected ')', expecting ']'</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 274</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 17:57:26: Status error
+2020-06-27 17:57:26: Error Internal Server Error
+2020-06-27 17:59:41: adm  act submit call
+2020-06-27 17:59:41: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined index: no</p>
+<p>Filename: models/Bank_soal_model.php</p>
+<p>Line Number: 304</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php<br />
+			Line: 304<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 114<br />
+			Function: insert_batch			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1054</p><p>Unknown column 'xx' in 'field list'</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_kunci`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`, `sd_no`, `xx`) VALUES ('siapakah tuhanmu?', 'A', 'Allah', 'Muhammad', 'Jibril', 'Jin', '74', 'pilihan', 11, 11, '')</p><p>Filename: C:/xampp/htdocs/outbound/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-06-27 17:59:41: Status error
+2020-06-27 17:59:41: Error Internal Server Error
+2020-06-27 18:00:08: adm  act submit call
+2020-06-27 18:00:08: JQXHR response text <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1054</p><p>Unknown column 'xx' in 'field list'</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_kunci`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`, `sd_no`, `xx`) VALUES ('siapakah tuhanmu?', 'A', 'Allah', 'Muhammad', 'Jibril', 'Jin', '74', 'pilihan', 12, 12, '١١')</p><p>Filename: C:/xampp/htdocs/outbound/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-06-27 18:00:08: Status error
+2020-06-27 18:00:08: Error Internal Server Error
+2020-06-27 18:05:47: adm  act submit call
+2020-06-27 18:05:47: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\models\Bank_soal_model.php</p>
+<p>Line Number: 322</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 225<br />
+			Function: load_file			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 30<br />
+			Function: model			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 18:05:47: Status error
+2020-06-27 18:05:47: Error Internal Server Error
+2020-06-27 19:47:06: adm  act submit call
+2020-06-27 19:47:06: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected '[', expecting variable (T_VARIABLE) or '{' or '$'</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\views\view_tambah_detail.php</p>
+<p>Line Number: 14</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 300<br />
+			Function: _ci_load			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 115<br />
+			Function: view			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 19:47:06: Status error
+2020-06-27 19:47:06: Error Internal Server Error
+2020-06-27 21:15:24: adm  act submit call
+2020-06-27 21:15:24: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ParseError</p>
+<p>Message: syntax error, unexpected ')', expecting ']'</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\views\view_tambah_detail.php</p>
+<p>Line Number: 12</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\third_party\MX\Loader.php<br />
+			Line: 300<br />
+			Function: _ci_load			</p>
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 117<br />
+			Function: view			</p>
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-06-27 21:15:24: Status error
+2020-06-27 21:15:24: Error Internal Server Error
+2020-06-27 21:15:37: adm  act submit call
+2020-06-27 21:15:37: JQXHR response text 	string(1) "A"
+
+2020-06-27 21:15:37: Status parsererror
+2020-06-27 21:15:37: Error SyntaxError: Unexpected token s in JSON at position 1
+2020-06-27 21:18:21: adm  act submit call
+2020-06-27 21:18:21: JQXHR response text 	bool(true)
+
+2020-06-27 21:18:21: Status parsererror
+2020-06-27 21:18:21: Error SyntaxError: Unexpected token b in JSON at position 1
+2020-06-27 21:19:07: adm  act submit call
+2020-06-27 21:19:07: JQXHR response text 	int(1)
+
+2020-06-27 21:19:07: Status parsererror
+2020-06-27 21:19:07: Error SyntaxError: Unexpected token i in JSON at position 1
+2020-06-27 21:19:15: adm  act submit call
+2020-06-27 21:19:15: JQXHR response text 		<tr>
+		<td style="width: 0.5em">
+			<input type="hidden" name="sd_master_soal" value="74">
+			<input type="hidden" name="sd_master_soal" value="13">
+			١٣		</td>
+		<td colspan="3">
+			siapakah tuhanmu?		</td>
+		<td>
+			<button onclick="('74','13')" >
+				<i class="fa fa-minus"></i>
+			</button>
+			<button onclick="('74','13')" >
+				<i class="fa fa-pencil"></i>
+			</button>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="width: 0.5em">
+			a.
+		</td>
+		<td style="width: 0.5em">
+			<input type="radio" name="jawaban[]" value="a" checked="checked" disabled></td>
+		<td colspan="1">Allah</td>
+		<tr> 
+			<td></td><td>b.</td>
+			<td style="width: 0.5em"><input type="radio" name="jawaban[]" value="b"  disabled></td>
+			<td colspan="1">Muhammad</td>
+		</tr></tr>
+		<tr>
+			<td></td><td>c.</td>
+			<td style="width: 0.5em"><input type="radio" name="jawaban[]" value="c"  disabled></td>
+			<td colspan="1">Jibril</td>
+		</tr>
+		<tr> 
+			<td></td><td>d.</td>
+			<td style="width: 0.5em"><input type="radio" name="jawaban[]" value="d"  disabled></td>
+			<td colspan="1">Jin</td>
+		</tr>
+
+
+
+
+
+		int(3)
+
+2020-06-27 21:19:15: Status parsererror
+2020-06-27 21:19:15: Error SyntaxError: Unexpected token < in JSON at position 2

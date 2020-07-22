@@ -1,0 +1,139 @@
+2020-07-12 08:37:47: adm  act submit call
+2020-07-12 08:37:47: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-12 08:37:47: Status error
+2020-07-12 08:37:47: Error Internal Server Error
+2020-07-12 08:38:01: adm  act submit call
+2020-07-12 08:38:01: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-12 08:38:01: Status error
+2020-07-12 08:38:01: Error Internal Server Error
+2020-07-12 08:38:46: adm  act submit call
+2020-07-12 08:38:46: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-12 08:38:46: Status error
+2020-07-12 08:38:46: Error Internal Server Error
+2020-07-12 19:19:33: adm  act submit call
+2020-07-12 19:19:33: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-12 19:19:33: Status error
+2020-07-12 19:19:33: Error Internal Server Error
+2020-07-12 19:20:13: adm  act submit call
+2020-07-12 19:20:13: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>An uncaught Exception was encountered</h4>
+
+<p>Type: ArgumentCountError</p>
+<p>Message: Too few arguments to function Bank_soal::import_data(), 0 passed in C:\xampp\htdocs\outbound\system\core\CodeIgniter.php on line 532 and exactly 1 expected</p>
+<p>Filename: C:\xampp\htdocs\outbound\application\modules\admin\bank_soal\controllers\Bank_soal.php</p>
+<p>Line Number: 93</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\outbound\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+		
+	
+
+</div>
+2020-07-12 19:20:13: Status error
+2020-07-12 19:20:13: Error Internal Server Error
+2020-07-12 19:23:29: adm  act submit call
+2020-07-12 19:23:29: JQXHR response text {"status":"ERROR","data":"Master Soal belum di simpan"}{"status":true,"view":"\t\t\n\t<tr>\n\t\t<td style=\"width: 0.5em\">\n\t\t\t<input type=\"hidden\" name=\"sd_master_soal\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"sd_master_soal\" value=\"1\">\n\t\t\t\u0661\t\t<\/td>\n\t\t<td colspan=\"3\">\n\t\t\tsiapakah tuhanmu?\t\t<\/td>\n\t\t<td>\n\t\t\t<button onclick=\"hapus('','1','pilihan')\" >\n\t\t\t\t<i class=\"fa fa-minus\"><\/i>\n\t\t\t<\/button>\n\t\t\t<button onclick=\"edit('','1','pilihan')\" >\n\t\t\t\t<i class=\"fa fa-pencil\"><\/i>\n\t\t\t<\/button>\n\t\t<\/td>\n\t<\/tr>\n\t<tr>\n\t\t<td><\/td>\n\t\t<td style=\"width: 0.5em\">\n\t\t\ta.\n\t\t<\/td>\n\t\t<td style=\"width: 0.5em\">\n\t\t\t<input type=\"radio\" name=\"jawaban1\" value=\"a\" checked=\"checked\" disabled><\/td>\n\t\t<td colspan=\"1\">Allah<\/td>\n\t\t<tr> \n\t\t\t<td><\/td><td>b.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban1\" value=\"b\"  disabled><\/td>\n\t\t\t<td colspan=\"1\">Muhammad<\/td>\n\t\t<\/tr><\/tr>\n\t\t<tr>\n\t\t\t<td><\/td><td>c.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban1\" value=\"c\"  disabled><\/td>\n\t\t\t<td colspan=\"1\">Jibril<\/td>\n\t\t<\/tr>\n\t\t<tr> \n\t\t\t<td><\/td><td>d.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban1\" value=\"d\"  disabled><\/td>\n\t\t\t<td colspan=\"1\">Jin<\/td>\n\t\t<\/tr>\n\n\n\n\n\n\t\t\t\n\t<tr>\n\t\t<td style=\"width: 0.5em\">\n\t\t\t<input type=\"hidden\" name=\"sd_master_soal\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"sd_master_soal\" value=\"2\">\n\t\t\t\u0662\t\t<\/td>\n\t\t<td colspan=\"3\">\n\t\t\tSiapakah nabimu?\t\t<\/td>\n\t\t<td>\n\t\t\t<button onclick=\"hapus('','2','pilihan')\" >\n\t\t\t\t<i class=\"fa fa-minus\"><\/i>\n\t\t\t<\/button>\n\t\t\t<button onclick=\"edit('','2','pilihan')\" >\n\t\t\t\t<i class=\"fa fa-pencil\"><\/i>\n\t\t\t<\/button>\n\t\t<\/td>\n\t<\/tr>\n\t<tr>\n\t\t<td><\/td>\n\t\t<td style=\"width: 0.5em\">\n\t\t\ta.\n\t\t<\/td>\n\t\t<td style=\"width: 0.5em\">\n\t\t\t<input type=\"radio\" name=\"jawaban2\" value=\"a\"  disabled><\/td>\n\t\t<td colspan=\"1\">Allah<\/td>\n\t\t<tr> \n\t\t\t<td><\/td><td>b.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban2\" value=\"b\" checked=\"checked\" disabled><\/td>\n\t\t\t<td colspan=\"1\">Muhammad<\/td>\n\t\t<\/tr><\/tr>\n\t\t<tr>\n\t\t\t<td><\/td><td>c.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban2\" value=\"c\"  disabled><\/td>\n\t\t\t<td colspan=\"1\">Jibril<\/td>\n\t\t<\/tr>\n\t\t<tr> \n\t\t\t<td><\/td><td>d.<\/td>\n\t\t\t<td style=\"width: 0.5em\"><input type=\"radio\" name=\"jawaban2\" value=\"d\"  disabled><\/td>\n\t\t\t<td colspan=\"1\">Jin<\/td>\n\t\t<\/tr>\n\n\n\n\n\n\t"}
+2020-07-12 19:23:29: Status parsererror
+2020-07-12 19:23:29: Error SyntaxError: Unexpected token { in JSON at position 55
