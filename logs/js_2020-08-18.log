@@ -1,0 +1,355 @@
+2020-08-18 11:03:18: adm  act submit call
+2020-08-18 11:03:18: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  mkdir(): No such file or directory</p>
+<p>Filename: controllers/Bank_soal.php</p>
+<p>Line Number: 105</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 105<br />
+			Function: mkdir			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>{"status":"ERROR","errors":"<p>The upload path does not appear to be valid.<\/p>"}
+2020-08-18 11:03:18: Status parsererror
+2020-08-18 11:03:18: Error SyntaxError: Unexpected token < in JSON at position 2
+2020-08-18 11:03:29: adm  act submit call
+2020-08-18 11:03:29: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  mkdir(): No such file or directory</p>
+<p>Filename: controllers/Bank_soal.php</p>
+<p>Line Number: 105</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 105<br />
+			Function: mkdir			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>{"status":"ERROR","errors":"<p>The upload path does not appear to be valid.<\/p>"}
+2020-08-18 11:03:29: Status parsererror
+2020-08-18 11:03:29: Error SyntaxError: Unexpected token < in JSON at position 2
+2020-08-18 11:04:46: adm  act submit call
+2020-08-18 11:04:46: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: 4096</p>
+<p>Message:  Object of class DateTime could not be converted to string</p>
+<p>Filename: database/DB_driver.php</p>
+<p>Line Number: 1476</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\models\Bank_soal_model.php<br />
+			Line: 410<br />
+			Function: insert			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 137<br />
+			Function: insert_batch			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1064</p><p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' '178', 'pilihan', 1)' at line 1</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_kunci`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`) VALUES ('08111906650', 2, 30, 60, 2, , '178', 'pilihan', 1)</p><p>Filename: C:/xampp/htdocs/api/mahad/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-08-18 11:04:46: Status error
+2020-08-18 11:04:46: Error Internal Server Error
+2020-08-18 11:08:04: adm  act submit call
+2020-08-18 11:08:04: JQXHR response text 
+2020-08-18 11:08:04: Status error
+2020-08-18 11:08:04: Error 
+2020-08-18 11:08:41: adm  act submit call
+2020-08-18 11:08:41: JQXHR response text 
+2020-08-18 11:08:41: Status error
+2020-08-18 11:08:41: Error 
+2020-08-18 11:10:31: adm  act submit call
+2020-08-18 11:10:31: JQXHR response text 
+2020-08-18 11:10:31: Status error
+2020-08-18 11:10:31: Error 
+2020-08-18 11:10:59: adm  act submit call
+2020-08-18 11:10:59: JQXHR response text 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: 4096</p>
+<p>Message:  Object of class DateTime could not be converted to string</p>
+<p>Filename: database/DB_driver.php</p>
+<p>Line Number: 1476</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\models\Bank_soal_model.php<br />
+			Line: 410<br />
+			Function: insert			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\application\modules\admin\bank_soal\controllers\Bank_soal.php<br />
+			Line: 137<br />
+			Function: insert_batch			</p>
+
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\xampp\htdocs\api\mahad\index.php<br />
+			Line: 317<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database Error</title>
+<style type="text/css">
+
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+	background-color: #fff;
+	margin: 40px;
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #4F5155;
+}
+
+a {
+	color: #003399;
+	background-color: transparent;
+	font-weight: normal;
+}
+
+h1 {
+	color: #444;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 19px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 15px 10px 15px;
+}
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#container {
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+}
+
+p {
+	margin: 12px 15px 12px 15px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>A Database Error Occurred</h1>
+		<p>Error Number: 1064</p><p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' '180', 'pilihan', 1)' at line 1</p><p>INSERT INTO `detail_soal_pilihan` (`sd_soal`, `sd_kunci`, `sd_a`, `sd_b`, `sd_c`, `sd_d`, `sd_master_soal`, `sd_type`, `sd_detailid`) VALUES ('08111906650', 'A', 30, 60, 2, , '180', 'pilihan', 1)</p><p>Filename: C:/xampp/htdocs/api/mahad/system/database/DB_driver.php</p><p>Line Number: 691</p>	</div>
+</body>
+</html>
+2020-08-18 11:10:59: Status error
+2020-08-18 11:10:59: Error Internal Server Error
+2020-08-18 11:11:59: adm  act submit call
+2020-08-18 11:11:59: JQXHR response text array(9) {
+  ["sd_soal"]=>
+  string(11) "08111906650"
+  ["sd_kunci"]=>
+  string(1) "A"
+  ["sd_a"]=>
+  int(30)
+  ["sd_b"]=>
+  int(60)
+  ["sd_c"]=>
+  int(2)
+  ["sd_d"]=>
+  object(DateTime)#51 (3) {
+    ["date"]=>
+    string(26) "2020-05-08 15:46:00.000000"
+    ["timezone_type"]=>
+    int(3)
+    ["timezone"]=>
+    string(12) "Asia/Jakarta"
+  }
+  ["sd_master_soal"]=>
+  string(3) "180"
+  ["sd_type"]=>
+  string(7) "pilihan"
+  ["sd_detailid"]=>
+  int(1)
+}
+
+2020-08-18 11:11:59: Status parsererror
+2020-08-18 11:11:59: Error SyntaxError: Unexpected token a in JSON at position 0
