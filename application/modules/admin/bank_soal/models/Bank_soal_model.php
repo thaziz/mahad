@@ -188,7 +188,7 @@ class Bank_soal_model extends CI_Model {
        $path = '/images/' . date('Y-m-d') . '/';
        if (!is_dir($dirg = 'assets' . $path)) {
         mkdir($dirg);
-    }
+       }   
     //$config['allowed_types'] = '*';
     $config['upload_path']   = $dirg;
     $this->load->library('upload', $config);
@@ -367,7 +367,8 @@ class Bank_soal_model extends CI_Model {
 
     $western_arabic = array('0','1','2','3','4','5','6','7','8','9');
     $eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
-    $data['xx'] = str_replace($western_arabic, $eastern_arabic, $_POST['no']);
+    $data['xx']='';
+//    $data['xx'] = str_replace($western_arabic, $eastern_arabic, $_POST['no']);
     $data['status']=true;
 
     return $data;
