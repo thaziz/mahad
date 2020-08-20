@@ -193,7 +193,7 @@ class Ujian_model extends CI_Model {
 
             $this->db->select('*');
             $this->db->from('detail_soal_pilihan');
-            $pilihan=$this->db->where('sd_master_soal',$id)->order_by('cast(sd_no as unsigned)','asc')->get()->result();
+            $pilihan=$this->db->where('sd_master_soal',$id)->order_by('sd_detailid','asc')->get()->result();
 
 
             $data=[];
@@ -240,7 +240,7 @@ if(count($pilihan)>0)
                 'ud_ujian'=>$id_soal,
                 'ud_master_soal'=>$v->sd_master_soal,
                 'ud_detailid'   =>$v->sd_detailid,
-                'ud_no'   =>$v->sd_no,
+               // 'ud_no'   =>$v->sd_no,
                 'ud_a'   =>$bs[0],                        
                 'ud_b'   =>$bs[1],                        
             ];                    

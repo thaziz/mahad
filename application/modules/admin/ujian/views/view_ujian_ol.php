@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<tr>
 									<td>Tanggal</td>
 									<td>
-										<?=$master->ms_startdate.' - '.$master->ms_enddate?>
+										<?=$master->ms_startdate?>
 									</td>
 								</tr>
 								<tr>
