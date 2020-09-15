@@ -95,6 +95,7 @@ class Hasil_ujian extends MX_Controller {
                 $row[] =$admin->u_nilai_pilihan;
                 $row[] =$admin->u_nilai_benarsalah;
                 $row[] =$admin->u_nilai_esai;
+                $row[] =$admin->u_nilai_total;
                 $row[] = $admin->u_id;                                       
                 $data[] = $row;
             
@@ -216,79 +217,17 @@ class Hasil_ujian extends MX_Controller {
         }
     }
   
-    public function save($id){
-        //var_dump($_POST);exit();
+public function save($id){
 
-        $n=0;
-        $pilihan=$this->hasil_ujian_model->chek_jawaban('pilihan');
-        $data=[];
-        $_data=[];
-
-        for ($i=1; $i <=$_POST['jenis1'] ; $i++) { 
-            if($_POST['type'.$i]=='pilihan'){
-                $data=['ud_ujian'=>$_POST['id_ujian'],'ud_master_soal'=>$_POST['ud_master_soal'.$i],
-                'ud_detailid'=>$_POST['ud_detailid'.$i],
-            ];
-                    //var_dump($_POST['jawaban'.$i]);
-            if(isset($_POST['jawaban'.$i])){
-
-                if($a=$this->chek($_POST['ud_master_soal'.$i],$_POST['ud_detailid'.$i],$_POST['jawaban'.$i],$pilihan)==1){
-                    $n+=$a;
-                    $data['ud_jawaban']=$_POST['jawaban'.$i];
-                    $data['ud_status']=1;
-                }
-                else{
-
-                    $data['ud_jawaban']=isset($_POST['jawaban'.$i])?$_POST['jawaban'.$i]:'';
-                    $data['ud_status']=0;
-                }
-            }else{
-                
-                $data['ud_jawaban']=isset($_POST['jawaban'.$i])?$_POST['jawaban'.$i]:'';
-                $data['ud_status']=0;
-            }
-            $_data[]=$data;
-        }
-    }
-
-$pilihan=$this->hasil_ujian_model->save_jawaban('pilihan',$_POST['id_ujian'],$_data,$n,$_POST['jenis1']);
-
-    $n=0;
-    $pilihan=$this->hasil_ujian_model->chek_jawaban('bn');
-    $data=[];
-    $_data=[];
-
-    for ($i=1; $i <=$_POST['jenis2'] ; $i++) { 
-        if($_POST['type_bs'.$i]=='bn'){
-            $data=['ud_ujian'=>$_POST['id_ujian'],'ud_master_soal'=>$_POST['ud_master_soal_bs'.$i],
-            'ud_detailid'=>$_POST['ud_detailid_bs'.$i],
-        ];
-                    //var_dump($_POST['jawaban'.$i]);
-        if(isset($_POST['jawaban_bs'.$i])){
-            if($a=$this->chek($_POST['ud_master_soal_bs'.$i],$_POST['ud_detailid_bs'.$i],$_POST['jawaban_bs'.$i],$pilihan)==1){
-                $n+=$a;
-                $data['ud_jawaban']=$_POST['jawaban_bs'.$i];
-                $data['ud_status']=1;
-            }
-            else{
-                
-                $data['ud_jawaban']=isset($_POST['jawaban_bs'.$i])?$_POST['jawaban_bs'.$i]:'';
-                $data['ud_status']=0;
-            }
-        }else{
-
-            $data['ud_jawaban']=isset($_POST['jawaban_bs'.$i])?$_POST['jawaban_bs'.$i]:'';
-            $data['ud_status']=0;
-        }
-        $_data[]=$data;
-    }
-}
-
-$pilihan=$this->hasil_ujian_model->save_jawaban('bn',$_POST['id_ujian'],$_data,$n,$_POST['jenis2']);
-
-//exit();
-var_dump($n);exit();
-
+    $data=['u_nilai_pilihan'=>$_POST['nilai_pilihan'],
+            'u_nilai_benarsalah'=>$_POST['nilai_bs'],
+            'u_nilai_esai'=>$_POST['nilai_esai'],
+            'u_nilai_total'=>$_POST['total']
+          ];
+    $this->db->where('u_id',$id);
+  $a=$this->db->update('ujian',$data);
+  echo json_encode($a);
+        
 }
 
 public function save_per_soal($id){
@@ -365,7 +304,9 @@ public function detail_ujian($id){
     if($auth){
         
         $data=$this->list_ujian_model->detail_ujian($id);
+        //var_dump($data);exit();
         $data['menu'] = $this->menu;
+        $data['id']=$id;
             //write user activity to logger
         $data['rules'] = $this->menu['rule']['panel/hasil_ujian'];
           //  var_dump($data['rules']);exit();

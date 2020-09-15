@@ -124,13 +124,11 @@ class Ujian_model extends CI_Model {
 
         
         $id_soal=$dx->row()->u_id;
-
         $this->db->select('*,SEC_TO_TIME(ms_waktu*60) ms_waktu');
         $this->db->join('db_subject','ms_matkul=id_subject');
         $this->db->from('master_soal');
         $d=$this->db->where('ms_id',$id)->get()->row(); 
         $d->sisa=$dx->row()->sisa_waktu;
-
 
 
         $this->db->select('*');
@@ -167,11 +165,18 @@ class Ujian_model extends CI_Model {
         $this->db->from('master_soal');
         $d=$this->db->where('ms_id',$id)->get();
         
+
+
         if($d->num_rows()>0){
 
           if(strtotime(date('H:i:s')) >=strtotime($d->row()->ms_starttime) &&
            strtotime(date('H:i:s'))<=strtotime($d->row()->ms_endtime)){
 
+
+        $used=($d->row()->ms_used==NULL?0:$d->row()->ms_used)+1;
+    //var_dump($used);exit();
+        $this->db->where('ms_id',$id);
+        $this->db->update('master_soal',['ms_used'=>$used]);
 
 
             $data=[
@@ -234,7 +239,7 @@ if(count($pilihan)>0)
             $bs=[];
             $bs[]=$v->sd_a.'===A';
             $bs[]=$v->sd_b.'===B';
-            shuffle($bs);
+            //shuffle($bs);
             if(count($bs)){
                $data[]=[
                 'ud_ujian'=>$id_soal,
@@ -536,9 +541,8 @@ function save_per_soal(){
 }
 
 
-function selesai($id){
-    
+function selesai($id){    
     $this->db->where('u_id',$id);
-    return $this->db->update('ujian',array('u_status' =>'1', ));
+    return $this->db->update('ujian',array('u_status' =>'1','u_end'=>date('Y-m-d H:i:s') ));
 }
 }

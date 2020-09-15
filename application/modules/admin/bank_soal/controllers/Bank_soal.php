@@ -43,22 +43,6 @@ class Bank_soal extends MX_Controller {
 	        $no = $_POST['start'];
 	        foreach ($list as $admin) {
 	            $no++;
-	            /*
-	            'ms_id',
-                        'ms_jenis_kel',
-                        'ms_jenis_ujian',
-                        'ms_matkul',
-                        'ms_level',
-                        'ms_kelas',
-                        'ms_dosen',
-                        'ms_startdate',
-                        'ms_enddate',
-                        'ms_starttime' ,
-                        'ms_endtime' ,
-                        'ms_created',
-                        'ms_created_by',
-                        'ms_waktu',
-                        */
 	            $row = array();	            
 	            $row[] = $admin->ms_jenis_ujian;	
 	            $row[] = $admin->subject_ar_name.' ('.$admin->time.')';
@@ -69,6 +53,7 @@ class Bank_soal extends MX_Controller {
 	            $row[] = $admin->ms_starttime .' - '.$admin->ms_endtime;
 	            $row[] = $admin->ms_created;	            
 	            $row[] = $admin->ms_status;
+                $row[] = $admin->ms_used;
 	            $row[] = $admin->ms_id;
 	            $data[] = $row;
 	        }
@@ -209,20 +194,25 @@ class Bank_soal extends MX_Controller {
             echo json_encode($result);
 
      */     
+//var_dump($_POST['sd_master_soal']);exit();
             if($_POST['sd_master_soal']==''){
+                //var_dump(1);exit();
                     $this->form_validation->set_rules('master_id', 'Master Soal', 'required');
             }
             $this->form_validation->set_rules('soal', 'Soal', 'required');
-            if($_POST['jenis']!='esai'){
+            if($_POST['jenis']=='bn'){
+               
             $this->form_validation->set_rules('kunci', 'Kunci Jawaban', 'required');
-            
-            $this->form_validation->set_rules('a', 'Jawaban A', 'required');
-            $this->form_validation->set_rules('b', 'Jawaban B', 'required');
             }
             if($_POST['jenis']=='pilihan'){
+
+                    $this->form_validation->set_rules('kunci', 'Kunci Jawaban', 'required');
+                    $this->form_validation->set_rules('a', 'Jawaban A', 'required');
+                    $this->form_validation->set_rules('b', 'Jawaban B', 'required');
                     $this->form_validation->set_rules('c', 'Jawaban C', 'required');
                     $this->form_validation->set_rules('d', 'Jawaban D', 'required');
             }
+            //var_dump($this->form_validation->run());exit();
             if ($this->form_validation->run() == false){
             	$data['status'] = false;
             	$data['e']['soal'] = form_error('soal', '<div class="has-error">', '</div>');
@@ -383,6 +373,26 @@ class Bank_soal extends MX_Controller {
     }
 
 
+
+    public function delete_master(){
+        //var_dump($_POST);exit();
+        $auth = $this->template->set_auth($this->menu['rule']['panel/bank_soal']['d']);
+        if ($auth) {
+            $data=$this->bank_soal_model->delete_master();
+
+            if ($data==true) {
+                /*$this->userlog->add_log($this->session->userdata['name'], ' DELETE CAMPAIGN ID ' . $info[0]->campaign_id . ' DELETE CAMPAIGN NAME ' . $info[0]->campaign_name);
+                $data['status'] = true;*/
+                echo json_encode($data);
+            } else {
+                echo json_encode($data);
+            }
+            
+        } else {
+            $this->template->view('');
+        }
+    }
+
     public function delete(){
         $auth = $this->template->set_auth($this->menu['rule']['panel/bank_soal']['d']);
         if ($auth) {
@@ -400,6 +410,10 @@ class Bank_soal extends MX_Controller {
         }
     }
 
-	
+	function mata_kuliah(){
+        $this->db->where('level',$_POST['level']);
+        $this->db->where('used_stat','used');        
+        echo json_encode($this->db->get('db_subject')->result());
+    }
 
 }

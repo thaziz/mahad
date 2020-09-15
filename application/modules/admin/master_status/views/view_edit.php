@@ -618,7 +618,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            												<td style="width: 10px">
 		            													<input type="radio" name="jawaban-bs<?=$v->sd_detailid?>" value="a" <?=$a ?> disabled>
 		            												</td>
-		            												<td colspan="1">Benar</td>
+		            												<td colspan="1"><?=$v->sd_a ?></td>
 		            											</tr>
 		            											<tr>
 		            												<td style="width: 10px"></td>
@@ -629,7 +629,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            												<td style="width: 10px">
 		            													<input type="radio" name="jawaban-bs<?=$v->sd_detailid?>" value="b" <?=$b ?> disabled>
 		            												</td>
-		            												<td colspan="1">Salah</td>
+		            												<td colspan="1"><?=$v->sd_b ?></td>
 		            											</tr>
 
 		            										</table>
@@ -997,24 +997,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<td colspan="2"><input type="file" name="berkas" class="reset2"></td>								
 									</tr>
 								</table>
-								<table class="table" width="100%">
+								<table class="table">
 									<tr>
-										<th width="50px">-</th>
-										<th width="150px" class="info_kunci_bs">Kunci Jawaban
-										</th>
 										<th>-</th>
+										<th width="10%" class="info_kunci_bs">Kunci Jawaban
+										</th>
+										<th>Jawaban</th>
 									</tr>
 
 									<tr>
 										<td></td>       				
 										<td><input type="radio" name="kunci" value="a"></td>
-										<td>Benar
+										<td><input type="text" name="a" class="form-control reset2">
+											<span class="info_bs"></span>
 										</td>
 									</tr>
 									<tr>
 										<td></td>       				
 										<td><input type="radio" name="kunci" value="b"></td>
-										<td>Salah
+										<td><input type="text" name="b" class="form-control reset2">
+											<span class="info_bs"></span>
 										</td>
 									</tr>		    						
 								</table>
@@ -1114,27 +1116,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			config.enterMode = CKEDITOR.ENTER_BR;
 
 		};
-
-
-CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
-	'Comic Sans MS/Comic Sans MS, cursive;' +
-	'Courier New/Courier New, Courier, monospace;' +
-	'Georgia/Georgia, serif;' +
-	'Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;' +
-	'Tahoma/Tahoma, Geneva, sans-serif;' +
-	'Times New Roman/Times New Roman, Times, serif;' +
-	'Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;' +
-	'Verdana/Verdana, Geneva, sans-serif';
-
-	CKEDITOR.config.font_style = {
-	element: 'span',
-	styles: { 'font-family': '#(family)' },
-	overrides: [ {
-		element: 'font', attributes: { 'face': null }
-	} ]
-};
-
-
 		CKEDITOR.config.autoParagraph = false;
 		var toolbars = [{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },{ name: 'links', items: [ 'Link', 'Unlink' ] },];
 		CKEDITOR.replace('lheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
@@ -1250,7 +1231,6 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 						dataType: 'json',
 						success:function(data, textStatus, jqXHR){
 							if(!data.status){
-								$('#form_soal2 .simpan').attr('disabled',false);
 								$.each(data.e, function(key, val){
 									console.log(key)
 									$('[name="'+key+'"] + .info_bs').html(val);

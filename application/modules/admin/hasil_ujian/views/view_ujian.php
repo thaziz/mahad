@@ -98,24 +98,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							<tr>
 								<td>Soal Pilihan ganda</td>
-								<td><input class="form-control" type="number" name="" value="<?=$master->u_nilai_pilihan==''?0:$master->u_nilai_pilihan ?>"></td>
+								<td><input readonly="" class="form-control" type="number" name="nilai_pilihan" value="<?=$master->u_nilai_pilihan==''?0:$master->u_nilai_pilihan ?>" ></td>
 							</tr>	            		
 
 							<tr>
 								<td>Soal Benar Salah</td>
-								<td><input class="form-control" type="number" name="" value="<?=$master->u_nilai_benarsalah==''?0:$master->u_nilai_benarsalah ?>"></td>
+								<td><input readonly="" class="form-control" type="number" name="nilai_bs" value="<?=$master->u_nilai_benarsalah==''?0:$master->u_nilai_benarsalah ?>"></td>
 								
 							</tr>	            		
 
 							<tr>
 								<td>Soal Esai</td>
-								<td><input class="form-control" type="number" name="" value="<?=$master->u_nilai_esai==''?0:$master->u_nilai_esai ?>"></td>	
+								<td><input class="form-control" type="number" name="nilai_esai" value="<?=$master->u_nilai_esai==''?0:$master->u_nilai_esai ?>"></td>	
 							</tr>	            		
 
 							<tr>
 								<th>Nilai Total</th>
 								<th>
-									<input class="form-control" type="number" name="" value="<?=$master->u_nilai_total==''?'':$master->u_nilai_esai ?>">
+									<input class="form-control" type="number" name="total" value="<?=$master->u_nilai_total==''?'':$master->u_nilai_esai ?>">
 								</th>	
 							</tr>	            		
 						</table>
@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="box-footer">
 						<div class="col-md-4 col-sm-offset-8">
 							<button id = "enter" class="btn btn-primary  ds" type="submit" >Simpan</button>
-							<button id = "enter" class="btn btn-primary  ds" type="button"  onclick="location.href = '<?php echo base_url('panel/bank_soal'); ?>'"; /> Kembali</button>
+							<button id = "enter" class="btn btn-primary  ds" type="button"  onclick="location.href = '<?php echo base_url('panel/hasil_ujian/list/'.$master->u_soal); ?>'"; /> Kembali</button>
 						</div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										a.
 									</td>
 									<td style="width: 0.5em">
-										<input  <?=$ja?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$a[1]; ?>" class="ds">
+										<input  <?=$ja?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$a; ?>" class="ds">
 									</td>
 									<td colspan="1" <?=$jja?>><?=$a?></td>
 								</tr>
@@ -234,19 +234,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<td></td>
 									<td>b.</td>
 									<td style="width: 0.5em">
-										<input  <?=$jb?>  class="ds" type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$b[1]?>" ></td>
+										<input  <?=$jb?>  class="ds" type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$b?>" ></td>
 										<td colspan="1" <?=$jjb?> ><?=$b;?></td>
 									</tr>
 									<tr>
 										<td></td>
 										<td>c.</td>
 										<td style="width: 0.5em">
-											<input  <?=$jc?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$c[1] ?>" class="ds" ></td>
+											<input  <?=$jc?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$c ?>" class="ds" ></td>
 										<td colspan="1" <?=$jjc?>><?=$c; ?></td>
 									</tr>
 									<tr> 
 										<td></td><td>d.</td>
-										<td style="width: 0.5em"><input  <?=$jd?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$d[1] ?>" class="ds" ></td>
+										<td style="width: 0.5em"><input  <?=$jd?>  type="radio" name="jawaban<?=$v->sd_detailid;?>" value="<?=$d ?>" class="ds" ></td>
 										<td colspan="1" <?=$jjd?>><?=$d; ?></td>
 									</tr>
 								<?php endforeach ?>
@@ -318,7 +318,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										a.
 									</td>
 									<td style="width: 0.5em">
-										<input  <?=$ja?>  type="radio" name="jawaban-bs<?=$v->sd_detailid;?>" value="<?=$a[1]; ?>" class="ds">
+										<input  <?=$ja?>  type="radio" name="jawaban-bs<?=$v->sd_detailid;?>" value="<?=$a; ?>" class="ds">
 									</td>
 									<td colspan="1" <?=$jja?>><?=$a?></td>
 								</tr>
@@ -326,7 +326,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<td></td>
 									<td>b.</td>
 									<td style="width: 0.5em">
-										<input  <?=$jb?>  class="ds" type="radio" name="jawaban-bs<?=$v->sd_detailid;?>" value="<?=$b[1]?>" ></td>
+										<input  <?=$jb?>  class="ds" type="radio" name="jawaban-bs<?=$v->sd_detailid;?>" value="<?=$b?>" ></td>
 										<td colspan="1" <?=$jjb?>><?=$b;?></td>
 									</tr>
 								<?php endforeach ?>
@@ -430,7 +430,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					//data.push({master:$('#master').val()});	
 					
 					$.ajax({
-						url : '<?php echo base_url("panel/ujian/save/".$id); ?>',
+						url : '<?php echo base_url("panel/hasil_ujian/save/".$id); ?>',
 						type: "POST",
 						data:new FormData(this),
 						processData:false,
@@ -440,13 +440,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						//dataType: 'json',
 						success:function(data, textStatus, jqXHR){
 							//$('.ds').attr('disabled',true)	
-							if(!data.status){
+							if(!data){
 								$.each(data.e, function(key, val){
 									$('[name="'+key+'"] + .info').html(val);
 									$('#'+key).html(val);
 
 								});
-							}else{	
+							}else{
+							$().toastmessage('showToast', {
+				                  text     : 'Simpan nilai sukses',
+				                  position : 'top-center',
+				                  type     : 'success',
+				                  close    : function () {
+				                  //  window.location = "<?=base_url('panel/bank_soal');?>";
+				                  }
+				              });
+
 								
 
 							}

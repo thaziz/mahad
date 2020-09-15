@@ -65,6 +65,7 @@ class Menu_model extends CI_Model {
 			}
 
 		}
+		//var_dump($data);exit();
 		return $data;
 	}
 

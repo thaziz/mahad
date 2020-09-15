@@ -1,46 +1,24 @@
 <?php
 
-class Bank_soal_model extends CI_Model {
+class Master_status_model extends CI_Model {
 
     
 
 
 
     private $pref = '';
-    var $table = 'master_soal';
+    var $table = 'master_status';
     var $column_order = array( 
-                        'ms_id',
-                        'ms_jenis_kel',
-                        'ms_jenis_ujian',
-                        'ms_matkul',
-                        'ms_level',
-                        'ms_kelas',
-                        'ms_dosen',
-                        'ms_startdate',
-                        'ms_enddate',
-                        'ms_starttime' ,
-                        'ms_endtime' ,
-                        'ms_created',
-                        'ms_created_by',
-                        'ms_waktu',
+                        'id',
+                        'name',
+                        'enabled',
                         );
-    var $column_search =array( 
-                        'ms_id',
-                        'ms_jenis_kel',
-                        'ms_jenis_ujian',
-                        'ms_matkul',
-                        'ms_level',
-                        'ms_kelas',
-                        'ms_dosen',
-                        'ms_startdate',
-                        'ms_enddate',
-                        'ms_starttime' ,
-                        'ms_endtime' ,
-                        'ms_created',
-                        'ms_created_by',
-                        'ms_waktu',
+    var $column_search = array( 
+                        'id',
+                        'name',
+                        'enabled',
                         );
-    var $order = array('ms_id' => 'asc');
+    var $order = array('name' => 'asc');
 
     function __construct()
     {
@@ -53,9 +31,8 @@ class Bank_soal_model extends CI_Model {
 
      private function load_admin(){
 
-        $this->db->select('*');
-        $this->db->join('db_subject','ms_matkul=id_subject');
-        $this->db->from('master_soal');
+        $this->db->select('*');        
+        $this->db->from('master_status');
 
         $i = 0;
         foreach ($this->column_search as $item) {
@@ -178,8 +155,12 @@ class Bank_soal_model extends CI_Model {
 
     public function insert_detail(){
 
-       $config['allowed_types']        = 'jpeg|jpg|png';
-       $config['max_size']             = 5024; //5MB
+    //image
+      // $config['upload_path']          = './gambar/';
+       $config['allowed_types']        = 'gif|jpg|png';
+       $config['max_size']             = 1020040000;
+       /* $config['max_width']            = 1024;
+       $config['max_height']           = 768;*/
 
        $path = '/images/' . date('Y-m-d') . '/';
        if (!is_dir($dirg = 'assets' . $path)) {
@@ -207,8 +188,13 @@ class Bank_soal_model extends CI_Model {
     //audio
     unset($config);
 
-       $config['max_size']             = 3024;//3MB
+       // $config['upload_path']          = './gambar/';
+       // $config['allowed_types']        = 'gif|jpg|png|wav';
+       $config['max_size']             = 1020040;
        $config['overwrite']=false;
+       /* $config['max_width']            = 1024;
+       $config['max_height']           = 768;*/
+
        $path = '/uploads/' . date('Y-m-d') . '/';
        if (!is_dir($dir = 'assets' . $path)) {
         mkdir($dir);
@@ -315,8 +301,8 @@ class Bank_soal_model extends CI_Model {
             'sd_soal'=>$_POST['soal'],
             'sd_gambar' =>$_FILES['gambar']['name'],
             'sd_audio' =>$_FILES['berkas']['name'],
-            /*'sd_a' =>$_POST['a'],
-            'sd_b' =>$_POST['b'],*/
+            'sd_a' =>$_POST['a'],
+            'sd_b' =>$_POST['b'],
             'sd_kunci' =>$_POST['kunci'],
         ];
 
@@ -601,9 +587,9 @@ public function update_detail(){
             'sd_soal'=>$_POST['soal'],
             'sd_gambar' =>$_FILES['gambar']['name'],
             'sd_audio' =>$_FILES['berkas']['name'],
-/*            'sd_a' =>$_POST['a'],
+            'sd_a' =>$_POST['a'],
             'sd_b' =>$_POST['b'],
-*/            'sd_kunci' =>$_POST['kunci'],
+            'sd_kunci' =>$_POST['kunci'],
         ];
 
 
@@ -673,39 +659,6 @@ public function delete(){
     }
 
 
-
-}
-
-public function delete_master(){
-
-    $this->db->where_in('u_soal',$_POST['d_id']);
-    $q=$this->db->get('ujian');
-    
-    if($q->num_rows()>0){
-        
-        return false;
-    }else{
-
-        $this->db->where_in('sd_master_soal',$_POST['d_id']);
-        $q=$this->db->delete('detail_soal_pilihan');
-
-
-        $this->db->where_in('sd_master_soal',$_POST['d_id']);
-        $q=$this->db->delete('detail_soal_benarsalah');
-
-        $this->db->where_in('sd_master_soal',$_POST['d_id']);
-        $q=$this->db->delete('detail_soal_esai');
-
-        if($q){
-
-            $this->db->where_in('ms_id',$_POST['d_id']);
-            $q=$this->db->delete('master_soal');
-
-            if($q){                
-                return true;
-            }                
-        }        
-    }
 
 }
 

@@ -250,7 +250,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<td style="width: 10px">
 						<input type="radio" name="jawaban-bs<?=$sd_detailid?>" value="a" <?=$a ?> disabled>
 					</td>
-					<td colspan="1">Benar</td>
+					<td colspan="1"><?=$sd_a ?></td>
 					<td></td>
 				</tr>
 				<tr> 
@@ -260,7 +260,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<td style="width: 0.5em">
 						<input type="radio" name="jawaban-bs<?=$sd_detailid?>" value="b" <?=$b ?> disabled>
 					</td>
-					<td colspan="1">Salah</td>
+					<td colspan="1"><?=$sd_b ?></td>
 					<td></td>
 				</tr>
 			</table>

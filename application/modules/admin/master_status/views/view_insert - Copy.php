@@ -1,50 +1,41 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/materialtimepicker/mdtimepicker.min.css">
+<style type="text/css">
+	.b.nav>li>a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.borderless td, .borderless th {
+		border: none;
+	}
+
+	.table thead tr th, .table tbody tr td {
+		border: none;
+	}
+</style>
+<div class="content-wrapper">
 
 
+	<section class="content-header">
+		<h1>
+			Bank Soal
+			<small> Insert</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="<?=base_url('panel');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			<li><a href="<?=base_url('panel/admin');?>">Bank Soal</a></li>
+			<li class="active">Insert</li>
+		</ol>
+	</section>
 
-
-		
-		<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/timepicker/bootstrap-timepicker.css"> -->
-		
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/daterangepicker/daterangepicker.css">
-		<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/materialtimepicker/mdtimepicker.min.css"> -->
-		<style type="text/css">
-			.b.nav>li>a {
-				padding-top: 5px;
-				padding-bottom: 5px;
-			}
-			.borderless td, .borderless th {
-				border: none;
-			}
-
-			.table thead tr th, .table tbody tr td {
-				border: none;
-			}
-		</style>
-		<div class="content-wrapper">
-
-
-			<section class="content-header">
-				<h1>
-					Bank Soal
-					<small> Insert</small>
-				</h1>
-				<ol class="breadcrumb">
-					<li><a href="<?=base_url('panel');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-					<li><a href="<?=base_url('panel/admin');?>">Bank Soal</a></li>
-					<li class="active">Insert</li>
-				</ol>
-			</section>
-
-			<section class="content">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="box">		  				       
-							<form class="form-horizontal" method="post" id="form_master">
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">		  				       
+					<form class="form-horizontal" method="post" id="form_master">
 						<div class="box-body">
 							<input type="hidden" name="id_master" id="master">
 							<table width="100%" class="table">
@@ -55,12 +46,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<td>
 										<div class=""> 
 											<div class="col-md-2" style="padding: 0px 0px 0px 0px"> 
-												<select class="form-control ds" name="level" onchange="level_kelas()">
-													<option>0</option>	
+												<select class="form-control ds" name="level">
 													<option>1</option>	
 													<option>2</option>	
 													<option>3</option>	
-													<option>4</option>	
 												</select>
 												<span class="info"></span>
 											</div>
@@ -88,15 +77,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<tr>
 									<td>Mata Kuliah</td>
 									<td>
-										<select class="form-control ds" name="matkul" id="matkul_">
-											<option value="">--Mata Kuliah--</option>
+										<select class="form-control ds" name="matkul">
 											<?php foreach ($matkul as $key => $v): ?>
 												<option value="<?=$v->id?>"><?=$v->nama ?></option>	
 											<?php endforeach ?>
 										</select>
 
-												<span class="info"></span>									
-											
 									</td>
 								</tr>
 								<tr>
@@ -123,8 +109,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				
           <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="form-group " id="div_kategori">
-              <input autocomplete="off"   id="tgl" value="<?=date('d-m-Y') ?>" type="text" class="form-control reset date" name="tanggal"  autocomplete="off">
+            <div class="form-group form-group-sm" id="div_kategori">
+              <input autocomplete="off" onchange="refresh_kode()"  id="tgl" value="<?=date('d-m-Y') ?>" type="text" class="form-control reset date" name="tanggal"  autocomplete="off">
 
 												<span class="info"></span>
 				
@@ -141,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<div class="row">
 												<div class="col-xs-12 col-sm-6">
 													<div class="input-group">
-														<input type="text" name="stime_perday" class="form-control timepicker ds" value="<?=date('h:i A')?>">
+														<input type="text" name="stime_perday" class="form-control timepicker ds" value="5:13 PM">
 														<div class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</div>
@@ -149,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												</div>
 												<div class="col-xs-12 col-sm-6">
 													<div class="input-group">
-														<input type="text" name="etime_perday" class="form-control timepicker ds" value="<?=date('h:i A')?>">
+														<input type="text" name="etime_perday" class="form-control timepicker ds" value="5:13 PM">
 														<div class="input-group-addon">
 															<i class="fa fa-clock-o"></i>
 														</div>
@@ -199,7 +185,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<section class="content" id="detail" style="display:">
+<section class="content" id="detail" style="display:none">
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
@@ -246,7 +232,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 		            				<div class="row"> 
-
 		            					<div class="col-md-12">
 		            						<button href="#import" data-toggle="collapse" id = "enter" class="btn btn-warning pull-right" type="button"><i class="fa fa-upload"></i> Pilihan Ganda</button>
 		            						<br> 
@@ -254,18 +239,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            				</div>	
 		            				<div class="col-md-12"> 
 
-		            					<table class="table borderless table_soal1" width="100%">
+		            					<table class="table borderless" width="100%">
 		            						<tbody id="body_soal"> 
-
-		            							
 		            						</tbody>
 		            					</table>
 		            				</div>
 
 
 
-		            				<div class="pull-right"> 	
-		            					<button type="button" class="btn btn-primary btn-sm"  onclick="soal1()"><i class="fa fa-plus"></i> Tambah Soal</button>		            					
+		            				<div class="btn-group pull-right"> 	
+		            					<button type="button" class="btn btn-default"  onclick="soal1()"><i class="fa fa-plus"></i> Tambah Soal</button>
+		            					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		            						<span class="caret"></span>
+		            						<span class="sr-only">Toggle Dropdown</span>
+		            					</button>
+		            					<ul class="dropdown-menu" role="menu">
+		            						<li><a onclick="header1()">Tambah Header</a></li>
+		            						<li><a onclick="header2()">Tambah Sub Header</a></li>
+		            						<li><a onclick="header3()">Tambah Uraian</a></li>
+		            					</ul>
 		            				</div>
 
 
@@ -326,18 +318,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            				</div>	
 		            				<div class="col-md-12"> 
 
-		            					<table class="table borderless table_soal2" width="100%">
+		            					<table class="table borderless" width="100%">
 		            						<tbody id="body_soal_bs"> 
-
-
 		            						</tbody>
 		            					</table>
 		            				</div>
 
 
 
-		            				<div class="pull-right"> 	
-		            					<button type="button" class="btn btn-primary btn-sm"  onclick="soal2()"><i class="fa fa-plus"></i> Tambah Soal</button>		            					
+		            				<div class="btn-group pull-right"> 	
+		            					<button type="button" class="btn btn-default"  onclick="soal2()"><i class="fa fa-plus"></i> Tambah Soal</button>
+		            					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		            						<span class="caret"></span>
+		            						<span class="sr-only">Toggle Dropdown</span>
+		            					</button>
+		            					<ul class="dropdown-menu" role="menu">
+		            						<li><a onclick="header1()">Tambah Header</a></li>
+		            						<li><a onclick="header2()">Tambah Sub Header</a></li>
+		            						<li><a onclick="header3()">Tambah Uraian</a></li>
+		            					</ul>
 		            				</div>
 
 
@@ -408,20 +407,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            				</div>	
 		            				<div class="col-md-12"> 
 
-		            					<table class="table borderless table_soal3" width="100%">
+		            					<table class="table borderless" width="100%">
 		            						<tbody id="body_soal_esai"> 
-
-
-		            						
-
 		            						</tbody>
 		            					</table>
 		            				</div>
 
 
 
-		            				<div class="pull-right"> 	
-		            					<button type="button" class="btn btn-primary btn-sm"  onclick="soal3()"><i class="fa fa-plus"></i> Tambah Soal</button>		            					
+		            				<div class="btn-group pull-right"> 	
+		            					<button type="button" class="btn btn-default"  onclick="soal3()"><i class="fa fa-plus"></i> Tambah Soal</button>
+		            					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		            						<span class="caret"></span>
+		            						<span class="sr-only">Toggle Dropdown</span>
+		            					</button>
+		            					<ul class="dropdown-menu" role="menu">
+		            						<li><a onclick="header1()">Tambah Header</a></li>
+		            						<li><a onclick="header2()">Tambah Sub Header</a></li>
+		            						<li><a onclick="header3()">Tambah Uraian</a></li>
+		            					</ul>
 		            				</div>
 
 
@@ -470,37 +474,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<form class="form-horizontal" enctype="multipart/form-data" method="post" id="form_soal">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title modal-title1">Tambah Soal Pilihan</h4>
+						<h4 class="modal-title">Tambah Soal Pilihan</h4>
 					</div>
 					<div class="modal-body">
-
-						<input type="hidden" name="master_id" class="master_soal" value="">
-
-
-						<div id="tdetail" class="collapse">
-
-							<table class="table">
-								<tr>
-									<td>Header</td>
-									<td colspan="2"><textarea class="form-control" name="lheader" id="lheader"></textarea></td>								
-								</tr>
-								<tr>
-									<td>Sub Header</td>
-									<td colspan="2"><textarea class="form-control" name="subheader" id="subheader"></textarea></td>								
-								</tr>
-								<tr>
-									<td>Soal Cerita</td>
-									<td colspan="2"><textarea class="form-control" name="cerita" id="cerita"></textarea></td>								
-								</tr>
-
-							</table>
+						<input type="hidden" name="master_id" class="master_soal">
 
 
-							<div class="progress" style="display:none;">
-								<div class="indeterminate"></div>
-							</div>
-						</div>
+								<div id="tdetail" class="collapse">
 
+									<table class="table">
+										<tr>
+											<td>Header</td>
+											<td colspan="2"><textarea class="form-control" name="lheader" id="lheader"></textarea></td>								
+										</tr>
+										<tr>
+											<td>Sub Header</td>
+											<td colspan="2"><textarea class="form-control" name="subheader" id="subheader"></textarea></td>								
+										</tr>
+										<tr>
+											<td>Soal Cerita</td>
+											<td colspan="2"><textarea class="form-control" name="cerita" id="cerita"></textarea></td>								
+										</tr>
+										
+									</table>
+
+
+									<div class="progress" style="display:none;">
+										<div class="indeterminate"></div>
+									</div>
+								</div>
+							
 
 
 
@@ -516,187 +519,156 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<tr>
 								<td>Soal</td>
 								<td colspan="2"><textarea class="form-control" name="soal" id="soal"></textarea>
-									<span class="info_soal_pilihan"></span>
-									<input type="hidden" name="jenis" value="pilihan" >	
-									<input type="hidden" name="sd_master_soal" value="" class="reset1">
-									<input type="hidden" name="sd_detailid" value="" class="reset1">
-									<input type="hidden" name="sd_gambar" value="" class="reset1">
-									<input type="hidden" name="sd_audio" value="" class="reset1">
-									</td>	
-
-								</tr>
-								<tr>
-									<td>Upload Gambar <br> <small style="color: red;font-size:12px">Max 5 MB (jpg,png)</small></td>
-									<td colspan="2"><input type="file" name="gambar" class="reset1"></td>								
-								</tr>
-								<tr>
-									<td>Upload Audio  <br> <small style="color: red;font-size:12px">Max 3 MB (wav)</small></td>
-									<td colspan="2"><input type="file" name="berkas" class="reset1"></td>								
-								</tr>
-							</table>
-							<table class="table">
-								<tr>
-									<th>-</th>
-									<th width="10%" class="info_kunci_pilihan">Kunci Jawaban
+								<span class="info_soal_pilihan"></span>
+									<input type="hidden" name="jenis" value="pilihan"></td>								
+							</tr>
+							<tr>
+								<td>Upload file</td>
+								<td colspan="2"><input type="file" name="berkas"></td>								
+							</tr>
+						</table>
+						<table class="table">
+							<tr>
+								<th>-</th>
+								<th width="10%" class="info_kunci_pilihan">Kunci Jawaban
 										
-									</th>
-									<th>Jawaban</th>
-								</tr>
+								</th>
+								<th>Jawaban</th>
+							</tr>
 
-								<tr>
-									<td>A.</td>       				
-									<td><input type="radio" name="kunci" value="a"></td>
-									<td><input type="text" name="a" class="form-control reset1">
-										<span class="info_pilihan"></span>
-									</td>
-								</tr>
-								<tr>
-									<td>B.</td>       				
-									<td><input type="radio" name="kunci" value="b"></td>
-									<td><input type="text" name="b" class="form-control reset1">
-										<span class="info_pilihan"></span>
-									</td>
-								</tr>
-								<tr>
-									<td>C.</td>       				
-									<td><input type="radio" name="kunci" value="c"></td>
-									<td><input type="text" name="c" class="form-control reset1">
-										<span class="info_pilihan"></span>
-									</td>
-								</tr>       			
-								<tr>
-									<td>D.</td>       				
-									<td><input type="radio" name="kunci" value="d"></td>
-									<td><input type="text" name="d" class="form-control reset1">
-										<span class="info_pilihan"></span>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary simpan" >Simpan</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
-					</form>
-				</div>
-
-			</div>
-		</div>
-
-
-		<!-- modal2 -->
-
-
-
-		<!-- Modal -->
-		<div id="myModal2" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<form class="form-horizontal" enctype="multipart/form-data" method="post" id="form_soal2">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title modal-title2">Tambah Soal Benar/Salah</h4>
-						</div>
-						<div class="modal-body">
-							<input type="hidden" name="master_id" class="master_soal" value="">
-
-							<table class="table">
-								<tr>
-									<td>Soal</td>
-									<td colspan="2">
-										<textarea class="form-control reset2" name="soal" id="soal2"></textarea>
-										<span class="info_soal_bs"></span>
-										<input type="hidden" name="jenis" value="bs">
-										<input type="hidden" name="sd_master_soal" value="" class="reset2">	
-										<input type="hidden" name="sd_detailid" value="" class="reset2">
-
-										<input type="hidden" name="sd_gambar" value="" class="reset2">
-										<input type="hidden" name="sd_audio" value="" class="reset2">
-									</td>					
-												
-									</tr>
-									<tr>
-										<td>Upload Gambar <br> <small style="color: red;font-size:12px">Max 5 MB (jpg,png)</small></td>
-										<td colspan="2"><input type="file" name="gambar" class="reset2">
-										</td>								
-									</tr>
-									<tr>
-										<td>Upload Audio  <br> <small style="color: red;font-size:12px">Max 3 MB (wav)</small> </td>
-										<td colspan="2"><input type="file" name="berkas" class="reset2"></td>								
-									</tr>
-								</table>
-								<table class="table">
-									<tr>
-										<th width="50px">-</th>
-										<th width="150px" class="info_kunci_bs">Kunci Jawaban
-										</th>
-										<th>Jawaban</th>
-									</tr>
-
-									<tr>
-										<td></td>       				
-										<td><input type="radio" name="kunci" value="a"></td>
-										<td>Benar</span>
-										</td>
-									</tr>
-									<tr>
-										<td></td>       				
-										<td><input type="radio" name="kunci" value="b"></td>
-										<td>Salah
-											<span class="info_bs"></span>
-										</td>
-									</tr>		    						
-								</table>
-							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-primary simpan" >Simpan</button>
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</div>
-						</form>
+							<tr>
+								<td>A.</td>       				
+								<td><input type="radio" name="kunci" value="a"></td>
+								<td><input type="text" name="a" class="form-control">
+									<span class="info_pilihan"></span>
+								</td>
+							</tr>
+							<tr>
+								<td>B.</td>       				
+								<td><input type="radio" name="kunci" value="b"></td>
+								<td><input type="text" name="b" class="form-control">
+									<span class="info_pilihan"></span>
+								</td>
+							</tr>
+							<tr>
+								<td>C.</td>       				
+								<td><input type="radio" name="kunci" value="c"></td>
+								<td><input type="text" name="c" class="form-control">
+									<span class="info_pilihan"></span>
+								</td>
+							</tr>       			
+							<tr>
+								<td>D.</td>       				
+								<td><input type="radio" name="kunci" value="d"></td>
+								<td><input type="text" name="d" class="form-control">
+									<span class="info_pilihan"></span>
+								</td>
+							</tr>
+						</table>
 					</div>
-
-				</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" >Simpan</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</form>
 			</div>
 
+		</div>
+	</div>
 
-			<!-- modal 3 -->
 
-			<!-- Modal -->
-			<div id="myModal3" class="modal fade" role="dialog">
-				<div class="modal-dialog">
+	<!-- modal2 -->
 
-					<!-- Modal content-->
-					<div class="modal-content">
-						<form class="form-horizontal" enctype="multipart/form-data" method="post" id="form_soal3">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title modal-title3">Tambah Soal Esai</h4>
-							</div>
-							<div class="modal-body">
-								<input type="hidden" name="master_id" class="master_soal" value="">
-								<table class="table">
-									<tr>
-										<td>Soal</td>
-										<td colspan="2"><textarea class="form-control" name="soal" id="soal3"></textarea>
-											<span class="info_soal_esai"></span>
-											<input type="hidden" name="jenis" value="esai">	
-											<input type="hidden" name="sd_master_soal" value="">	
-											<input type="hidden" name="sd_detailid" value="">
-										<input type="hidden" name="sd_gambar" value="" class="reset3">
-										<input type="hidden" name="sd_audio" value="" class="reset3">
-										</td>								
-										</tr>
-										<tr>
-											<td>Upload Gambar <br><small style="color: red;font-size:12px">Max 5 MB (jpg,png)</small></td>
-											<td colspan="2"><input type="file" name="gambar" class="reset3"></td>								
-										</tr>
-										<tr>
-											<td>Upload Audio  <br> <small style="color: red;font-size:12px">Max 3 MB (wav)</small> </td>
-											<td colspan="2"><input type="file" name="berkas" class="reset3"></td>								
-										</tr>
-									</table>
+
+
+	<!-- Modal -->
+	<div id="myModal2" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form class="form-horizontal" enctype="multipart/form-data" method="post" id="form_soal2">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Tambah Soal Benar/Salah</h4>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" name="master_id" class="master_soal">
+						<table class="table">
+							<tr>
+								<td>Soal</td>
+								<td colspan="2">
+									<textarea class="form-control" name="soal" id="soal2"></textarea>
+									<span class="info_soal_bs"></span>
+									<input type="hidden" name="jenis" value="bs"></td>								
+							</tr>
+							<tr>
+								<td>Upload file</td>
+								<td colspan="2"><input type="file" name="berkas"></td>								
+							</tr>
+						</table>
+						<table class="table">
+							<tr>
+								<th>-</th>
+								<th width="10%" class="info_kunci_bs">Kunci Jawaban
+								</th>
+								<th>Jawaban</th>
+							</tr>
+
+							<tr>
+								<td></td>       				
+								<td><input type="radio" name="kunci" value="a"></td>
+								<td><input type="text" name="a" class="form-control">
+										<span class="info_bs"></span>
+								</td>
+							</tr>
+							<tr>
+								<td></td>       				
+								<td><input type="radio" name="kunci" value="b"></td>
+								<td><input type="text" name="b" class="form-control">
+									<span class="info_bs"></span>
+								</td>
+							</tr>		    						
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary" >Simpan</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- modal 3 -->
+
+	<!-- Modal -->
+	<div id="myModal3" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form class="form-horizontal" enctype="multipart/form-data" method="post" id="form_soal3">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Tambah Soal Esai</h4>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" name="master_id" class="master_soal">
+						<table class="table">
+							<tr>
+								<td>Soal</td>
+								<td colspan="2"><textarea class="form-control" name="soal" id="soal3"></textarea>
+									<span class="info_soal_esai"></span>
+									<input type="hidden" name="jenis" value="esai"></td>								
+							</tr>
+							<tr>
+								<td>Upload file</td>
+								<td colspan="2"><input type="file" name="berkas"></td>			
+							</tr>
+						</table>
 						<!-- <table class="table">
 							<tr>
 								<th width="100%">Note</th>
@@ -708,7 +680,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</table> -->
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary simpan" >Simpan</button>
+						<button type="submit" class="btn btn-primary" >Simpan</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</form>
@@ -724,10 +696,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- date-range-picker -->
 <script src="<?php echo base_url(); ?>assets/plugins/daterangepicker/moment.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/daterangepicker/daterangepicker.js"></script><!-- bootstrap time picker -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-<!-- bootstrap time picker -->
-
 <script src="<?php echo base_url(); ?>assets/plugins/materialtimepicker/mdtimepicker.min.js"></script>
 <!-- CKEditor -->
 <script src="<?=base_url('assets')?>/plugins/input-mask/jquery.inputmask.bundle.js"></script>
@@ -738,52 +706,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$('#jk').val(jk)
 	}
 
-	function level_kelas(){
-		var level=$('select[name="level"]').val()
-			$.ajax({
-						url : '<?php echo base_url("panel/bank_soal/mata_kuliah"); ?>',
-						type: "POST",
-						data:{'level':level},
-						dataType: 'json',
-						success:function(data, textStatus, jqXHR){
-							var op='<option value"">--Mata Kuliah--</option>';
-							$.each(data, function(key, val){
-									op+='<option value="'+val.id_subject+'">'+val.subject_ar_name+'</option>'
-
-							});
-							
-							$('#matkul_').html(op)
-						}
-					});
-	}
-
 </script>
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
-
-		CKEDITOR.editorConfig = function (config)
-		{
-			config.enterMode = CKEDITOR.ENTER_BR;
-
-		};
-		var toolbars = [{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },{ name: 'links', items: [ 'Link', 'Unlink' ] },];
-		CKEDITOR.replace('lheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-		CKEDITOR.replace('subheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-		CKEDITOR.replace('cerita', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-		CKEDITOR.replace('soal', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-		CKEDITOR.replace('soal2', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-		CKEDITOR.replace('soal3', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
-	})
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		//$('.timepicker').mdtimepicker();
-		$('.timepicker').datetimepicker({
-            format: 'HH:mm'
-  		});
+		$('.timepicker').mdtimepicker();
 		$('#date_range').daterangepicker({
 			locale: {
 				format: 'MMMM DD, YYYY'
@@ -797,15 +723,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$('form#form_soal').on('submit', function(e) {
 			e.preventDefault();	
 
-			var note = CKEDITOR.instances['soal'].getData();
-			$('[name="soal"]').val(note);
-			var lheader = CKEDITOR.instances['lheader'].getData();
-			$('[name="lheader"]').val(lheader);
-			var subheader = CKEDITOR.instances['subheader'].getData();
-			$('[name="subheader"]').val(subheader);
-			var cerita = CKEDITOR.instances['cerita'].getData();
-			$('[name="cerita"]').val(cerita);
-			$('#form_soal .simpan').attr('disabled',true)
+		var note = CKEDITOR.instances['soal'].getData();
+		$('[name="soal"]').val(note);
+		var lheader = CKEDITOR.instances['lheader'].getData();
+		$('[name="lheader"]').val(lheader);
+		var subheader = CKEDITOR.instances['subheader'].getData();
+		$('[name="subheader"]').val(subheader);
+		var cerita = CKEDITOR.instances['cerita'].getData();
+		$('[name="cerita"]').val(cerita);
 					//data.push({master:$('#master').val()});		
 					$.ajax({
 						url : '<?php echo base_url("panel/bank_soal/insert_detail"); ?>',
@@ -824,42 +749,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									$('.info_'+key+'_pilihan').html(val);
 
 								});
-
-								if(data.error!=undefined){
-						$().toastmessage('showToast', {
-									text     : data.error,
-									position : 'top-center',
-									type     : 'error',
-								});
-						}
-								$('#form_soal .simpan').attr('disabled',false);
 							}else{	
-
-								if(data.is_use=='update'){
-									$('#detail-'+data.detailid).replaceWith(data.view)
-								}
-								else{
 									$('#body_soal').append(data.view)
-								}
-								var n=1;
-								$(".table_soal1 > tbody  > tr.no_soal").each(function(idx,tr) {
-									$(this).find("span").text(n)
-									n++;
-								});
-								reset_soal1();
-								$('#form_soal .simpan').attr('disabled',false);
-								$('#myModal').modal('hide');
-/*
-									$('table.table_soal1 > tbody  > tr').each(function(index, tr) { 
-									  alert(index);
-									});*/
-								}
-							},
-							error: function(jqXHR, textStatus, errorThrown){
-								alert('Error,something goes wrong');
-								$('#form_soal .simpan').attr('disabled',false);
 							}
-						});
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							alert('Error,something goes wrong');
+						}
+					});
 				});
 	});
 
@@ -875,8 +772,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		$('form#form_soal2').on('submit', function(e) {
 			e.preventDefault();	
 			var soal2 = CKEDITOR.instances['soal2'].getData();
-			$('#form_soal2 [name="soal"]').val(soal2);
-			$('#form_soal2 .simpan').attr('disabled',true);
+			$('[name="soal2"]').val(soal2);
 					//data.push({master:$('#master').val()});		
 					$.ajax({
 						url : '<?php echo base_url("panel/bank_soal/insert_detail"); ?>',
@@ -895,38 +791,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									$('.info_'+key+'_bs').html(val);
 
 								});
-								if(data.error!=undefined){
-						$().toastmessage('showToast', {
-									text     : data.error,
-									position : 'top-center',
-									type     : 'error',
-								});
-						}
-								$('#form_soal2 .simpan').attr('disabled',false);
 							}else{	
-								if(data.is_use=='update'){
-									$('#detail2-'+data.detailid).replaceWith(data.view)
-								}
-								else{
+								console.log(data.view)
 									$('#body_soal_bs').append(data.view)
-								}
-								var n=1;
-								$(".table_soal2 > tbody  > tr.no_soal").each(function(idx,tr) {
 
-									$(this).find("span").text(n)
-
-									n++;
-								});
-								reset_soal2();
-								$('#myModal2').modal('hide');
-								$('#form_soal2 .simpan').attr('disabled',false);
-		}
-},
-error: function(jqXHR, textStatus, errorThrown){
-	$('#form_soal2 .simpan').attr('disabled',false);
-	alert('Error,something goes wrong');
-}
-});
+							}
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							alert('Error,something goes wrong');
+						}
+					});
 				});
 	});
 
@@ -941,8 +815,8 @@ error: function(jqXHR, textStatus, errorThrown){
 			e.preventDefault();	
 
 			var soal3 = CKEDITOR.instances['soal3'].getData();
-			$('#form_soal3 [name="soal"]').val(soal3);
-			$('#form_soal3 .simpan').attr('disabled',true);
+			$('[name="soal3"]').val(soal3);
+
 			$.ajax({
 				url : '<?php echo base_url("panel/bank_soal/insert_detail"); ?>',
 				type: "POST",
@@ -960,36 +834,11 @@ error: function(jqXHR, textStatus, errorThrown){
 							$('.info_'+key+'_esai').html(val);
 
 						});
-						if(data.error!=undefined){
-						$().toastmessage('showToast', {
-									text     : data.error,
-									position : 'top-center',
-									type     : 'error',
-								});
-						}
-						$('#form_soal3 .simpan').attr('disabled',false);
 					}else{	
-						if(data.is_use=='update'){
-							$('#detail3-'+data.detailid).replaceWith(data.view)
-						}
-						else{
 							$('#body_soal_esai').append(data.view)
-						}
-						var n=1;
-						$(".table_soal3 > tbody  > tr.no_soal").each(function(idx,tr) {
-
-							$(this).find("span").text(n)
-
-							n++;
-						});
-
-						reset_soal3();
-						$('#myModal3').modal('hide');
-						$('#form_soal3 .simpan').attr('disabled',false);
 					}
 				},
 				error: function(jqXHR, textStatus, errorThrown){
-					$('#form_soal3 .simpan').attr('disabled',false);
 					alert('Error,something goes wrong');
 				}
 			});
@@ -1000,45 +849,14 @@ error: function(jqXHR, textStatus, errorThrown){
 </script>
 
 <script type="text/javascript">
-
-	function reset_soal1(){		
-		var note = CKEDITOR.instances['soal'].setData('');
-		$('[name="soal"]').val('');
-		var lheader = CKEDITOR.instances['lheader'].setData('');
-		$('[name="lheader"]').val('');
-		var subheader = CKEDITOR.instances['subheader'].setData('');
-		$('[name="subheader"]').val('');
-		var cerita = CKEDITOR.instances['cerita'].setData('');
-		$('[name="cerita"]').val('');
-		$('.reset1').val('');
-		$('#myModal').modal('show');
-		$("#form_soal input[name='kunci']").prop('checked', false);
-	}
-
-	function reset_soal2(){		
-		var note = CKEDITOR.instances['soal2'].setData('');
-		$('#form_soal2 [name="soal"]').val('');
-		$('.reset2').val('');
-		$("#form_soal2 input[name='kunci']").prop('checked', false);
-	}
-
-	function reset_soal3(){		
-		var note = CKEDITOR.instances['soal2'].setData('');
-		$('#form_soal3 [name="soal"]').val('');
-		$('.reset3').val('');
-		$("#form_soal3 input[name='kunci']").prop('checked', false);
-	}
 	function soal1(){
-		reset_soal1();
+
 		$('#myModal').modal('show');
-		
 	}
 	function soal2(){
-		reset_soal2();
 		$('#myModal2').modal('show');
 	}
 	function soal3(){
-		reset_soal3();
 		$('#myModal3').modal('show');
 	}
 
@@ -1076,7 +894,6 @@ error: function(jqXHR, textStatus, errorThrown){
 							$('[name="'+key+'"] + .info').html(val);
                 	//if(key=='oa_account_id')
                 	$('#'+key).html(val);
-
                 	
                 });
 					}else{
@@ -1129,11 +946,6 @@ error: function(jqXHR, textStatus, errorThrown){
 					}else if(data.status){
 						$('.upload_soal1').val('');
 						$('#body_soal').append(data.view)
-								var n=1;
-								$(".table_soal1 > tbody  > tr.no_soal").each(function(idx,tr) {
-									$(this).find("span").text(n)
-									n++;
-								});
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1182,13 +994,8 @@ error: function(jqXHR, textStatus, errorThrown){
               }
           });
 					}else if(data.status){
-						$('.upload_soal2').val('');
+						$('.upload_soal1').val('');
 						$('#body_soal_bs').append(data.view)
-								var n=1;
-								$(".table_soal2 > tbody  > tr.no_soal").each(function(idx,tr) {
-									$(this).find("span").text(n)
-									n++;
-								});
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1229,7 +1036,6 @@ error: function(jqXHR, textStatus, errorThrown){
 				contentType: false,
 				dataType: 'json',
 				success:function(data, textStatus, jqXHR){
-					console.log(data)
 					if(data.status=='ERROR'){
 						$().toastmessage('showToast', {
 							text     : 'Failed, '+data.errors,
@@ -1242,14 +1048,6 @@ error: function(jqXHR, textStatus, errorThrown){
 					}else if(data.status){
 						$('.upload_soal3').val('');
 						$('#body_soal_esai').append(data.view)
-
-						var n=1;
-								$(".table_soal3 > tbody  > tr.no_soal").each(function(idx,tr) {
-									$(this).find("span").text(n)
-									n++;
-								});
-
-
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1272,143 +1070,48 @@ error: function(jqXHR, textStatus, errorThrown){
 </script>
 
 
+<script type="text/javascript">
+	$(document).ready(function(){
+  	 var toolbars = [{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },{ name: 'links', items: [ 'Link', 'Unlink' ] },];
+	CKEDITOR.replace('lheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+	CKEDITOR.replace('subheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+	CKEDITOR.replace('cerita', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+	CKEDITOR.replace('soal', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+	CKEDITOR.replace('soal2', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+	CKEDITOR.replace('soal3', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
+})
+</script>
+
 
 <script type="text/javascript">
-	function edit_detail(master,detail,tipe){
-		/*if(tipe=='pilihan'){
-				$('#myModal').modal('show');
-		}else if(tipe=='bs'){
-				$('#myModal2').modal('show');
-		}
-		else if(tipe=='bs'){
-				$('#myModal3').modal('show');
-			}*/
+	function edit(master,detail,tipe){
 			$.ajax({
-				url : '<?php echo base_url("panel/bank_soal/edit_detail"); ?>',
-				type: "POST",
-				data:{'master':master,
-				'detail':detail,
-				'tipe':tipe
-			},
+						url : '<?php echo base_url("panel/bank_soal/edit"); ?>',
+						type: "POST",
+						data:{'master'=>master,
+							  'detail'=>detail,
+							  'tipe'=>tipe},
+						
+						dataType: 'json',
+						success:function(data, textStatus, jqXHR){
+							if(!data.status){
+								$.each(data.e, function(key, val){
+									$('[name="'+key+'"] + .info_pilihan').html(val);
+									
+									$('.info_'+key+'_pilihan').html(val);
 
-			dataType: 'json',
-			success:function(data, textStatus, jqXHR){
-
-				if(tipe=='pilihan'){			
-					$('.modal-title1').text('Edit Soal Pilihan');
-					CKEDITOR.instances['soal'].setData(data.pilihan.sd_soal);
-					$("#form_soal input[name='kunci'][value='"+data.pilihan.sd_kunci.toLowerCase()+"']").prop('checked', true);		
-					$("#form_soal input[name='a']").val(data.pilihan.sd_a);
-					$("#form_soal input[name='b']").val(data.pilihan.sd_b);
-					$("#form_soal input[name='c']").val(data.pilihan.sd_c);
-					$("#form_soal input[name='d']").val(data.pilihan.sd_d);	
-					$("#form_soal input[name='sd_master_soal']").val(data.pilihan.sd_master_soal);
-					$("#form_soal input[name='sd_detailid']").val(data.pilihan.sd_detailid);	
-					$("#form_soal input[name='sd_audio']").val(data.pilihan.sd_audio);
-					$("#form_soal input[name='sd_gambar']").val(data.pilihan.sd_gambar);	
-					$('#myModal').modal('show');		
-				}else if(tipe=='bs'){
-					$('.modal-title2').text('Edit Soal Benar/Salah');
-					CKEDITOR.instances['soal2'].setData(data.bs.sd_soal);
-					$("#form_soal2 input[name='kunci'][value='"+data.bs.sd_kunci.toLowerCase()+"']").prop('checked', true);
-					$("#form_soal2 input[name='a']").val(data.bs.sd_a);
-					$("#form_soal2 input[name='b']").val(data.bs.sd_b);
-					$("#form_soal2 input[name='sd_master_soal']").val(data.bs.sd_master_soal);
-					$("#form_soal2 input[name='sd_detailid']").val(data.bs.sd_detailid);	
-					$("#form_soal2 input[name='sd_audio']").val(data.bs.sd_audio);
-					$("#form_soal2 input[name='sd_gambar']").val(data.bs.sd_gambar);
-
-					$('#myModal2').modal('show');
-				}
-				else if(tipe=='esai'){
-					$('.modal-title3').text('Edit Soal Esai');
-					CKEDITOR.instances['soal3'].setData(data.esai.sd_soal);
-					$("#form_soal3 input[name='sd_master_soal']").val(data.esai.sd_master_soal);
-					$("#form_soal3 input[name='sd_detailid']").val(data.esai.sd_detailid);
-					$("#form_soal3 input[name='sd_audio']").val(data.esai.sd_audio);
-					$("#form_soal3 input[name='sd_gambar']").val(data.esai.sd_gambar);	
-					$('#myModal3').modal('show');
-				}
-
-
-
-				if(!data.status){
-					$.each(data.e, function(key, val){
-						$('[name="'+key+'"] + .info_pilihan').html(val);
-
-						$('.info_'+key+'_pilihan').html(val);
-
+								});
+							}else{	
+									$('#body_soal').append(data.view)
+							}
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							alert('Error,something goes wrong');
+						}
 					});
-				}else{	
-					$('#body_soal').append(data.view)
-				}
-			},
-			error: function(jqXHR, textStatus, errorThrown){
-				alert('Error,something goes wrong');
-			}
-		});
-
-		}
-		function hapus(master,detail,tipe){
-
-			if (confirm('Apakah Anda Yakin Ingin Hapus Soal ?')) {		  
-				$.ajax({
-					url : '<?php echo base_url("panel/bank_soal/delete"); ?>',
-					type: "POST",
-					data:{'master':master,
-					'detail':detail,
-					'tipe':tipe
-				},
-
-				dataType: 'json',
-				success:function(data, textStatus, jqXHR){
-					console.log(data);
-					/*{master: "149", detail: "11", tipe: "pilihan", status: true}*/
-
-					if(data.tipe=='pilihan'){
-
-			//alert('#table_soal1 tr#detail-'+data.detail)
-			$('#detail-'+data.detail).remove()
-			var n=1;
-			$(".table_soal1 > tbody  > tr.no_soal").each(function(idx,tr) {
 				
-				$(this).find("span").text(n)
-				
-				n++;
-			});
-			/*detail-<?=$sd_detailid?>*/
-			//	$('#table_soal1 tr#detail-'+data.detail).remove();
-		}else if(data.tipe=='bs'){
-			$('#detail2-'+data.detail).remove()
-			var n=1;
-			$(".table_soal2 > tbody  > tr.no_soal").each(function(idx,tr) {
-				
-				$(this).find("span").text(n)
-				
-				n++;
-			});
-		}
-		else if(data.tipe=='esai'){
-			$('#detail3-'+data.detail).remove()
-			var n=1;
-			$(".table_soal3 > tbody  > tr.no_soal").each(function(idx,tr) {
-				
-				$(this).find("span").text(n)
-				
-				n++;
-			});
-		}
-
-	},
-	error: function(jqXHR, textStatus, errorThrown){
-		alert('Error,something goes wrong');
 	}
-});				
-
-			} else {
-		  // Do nothing!
-		  console.log('Thing was not saved to the database.');
-		}
-
+	function hapus(master,detail,tipe){
+		
 	}
 </script>

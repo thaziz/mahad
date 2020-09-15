@@ -2,38 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php if ($status==false): ?>
-	<div class="content-wrapper">
-
-
-		<section class="content-header">
-			<h1>
-				Bank Soal
-				<small> Insert</small>
-			</h1>
-			<ol class="breadcrumb">
-				<li><a href="<?=base_url('panel');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-				<li><a href="<?=base_url('panel/admin');?>">Bank Soal</a></li>
-				<li class="active">Ujian</li>
-			</ol>
-		</section>
-
-		<section class="content">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="box">		  				       					
-						<div class="box-body">
-							<div class="alert alert-danger" >
-								<?=$info?>	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-
-	<?php else: ?>
 
 
 
@@ -48,168 +16,142 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			.borderless td, .borderless th {
 				border: none;
 			}
-			
+
 			.table thead tr th, .table tbody tr td {
 				border: none;
-				}
-			</style>
-			<div class="content-wrapper">
+			}
+		</style>
+		<div class="content-wrapper">
 
 
-				<section class="content-header">
-					<h1>
-						Bank Soal
-						<small> Insert</small>
-					</h1>
-					<ol class="breadcrumb">
-						<li><a href="<?=base_url('panel');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-						<li><a href="<?=base_url('panel/admin');?>">Bank Soal</a></li>
-						<li class="active">Insert</li>
-					</ol>
-				</section>
+			<section class="content-header">
+				<h1>
+					Bank Soal
+					<small> Insert</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="<?=base_url('panel');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li><a href="<?=base_url('panel/admin');?>">Bank Soal</a></li>
+					<li class="active">Insert</li>
+				</ol>
+			</section>
 
-				<section class="content">
-					<div class="row">
-						<div class="col-xs-12">
-							<div class="box">		  				       
-								<form class="form-horizontal" method="post" id="form_master">
-									<div class="box-body">
-										<input type="hidden" name="id_master" id="master" value="<?=$master->ms_id  ?>">
-										<table width="100%" class="table">
-										<!-- <td>Nama Dosen</td>
-											<td><input disabled="" class="form-control" type="" name="" value="<?=$this->session->userdata('name')?>" ></td> -->
-											<tr> 
-												<td>Kelas</td>
-												<td>
-													<div class=""> 
-														<div class="col-md-2" style="padding: 0px 0px 0px 0px"> 
-															<select class="form-control ds" name="level">
-																<option <?php if($master->ms_level==1){
-																	echo 'selected=""';
-																} ?> >1</option>	
-																<option <?php if($master->ms_level==2){
-																	echo 'selected=""';
-																} ?>>2</option>	
-																<option <?php if($master->ms_level==3){
-																	echo 'selected=""';
-																} ?>>3</option>	
-															</select>
-															<span class="info"></span>
-														</div>
-														<div class="col-md-2"> 
-															<select class="form-control ds" name="kelas">
-																<option  <?php if($master->ms_kelas=='A'){
-																	echo 'selected=""';
-																} ?>>A</option>	
-																<option  <?php if($master->ms_kelas=='B'){
-																	echo 'selected=""';
-																} ?>>B</option>	
-																<option  <?php if($master->ms_kelas=='C'){
-																	echo 'selected=""';
-																} ?>>C</option>	
-															</select>
+			<section class="content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">		  				       
+							<form class="form-horizontal" method="post" id="form_master">
+						<div class="box-body">
+							<input type="hidden" name="id_master" id="master">
+							<table width="100%" class="table">
+								<!-- <td>Nama Dosen</td>
+								<td><input disabled="" class="form-control" type="" name="" value="<?=$this->session->userdata('name')?>" ></td> -->
+								<tr> 
+									<td>Kelas</td>
+									<td>
+										<div class=""> 
+											<div class="col-md-2" style="padding: 0px 0px 0px 0px"> 
+												<select class="form-control ds" name="level">
+													<option>1</option>	
+													<option>2</option>	
+													<option>3</option>	
+												</select>
+												<span class="info"></span>
+											</div>
+											<div class="col-md-2"> 
+												<select class="form-control ds" name="kelas">
+													<option>A</option>	
+													<option>B</option>	
+													<option>C</option>	
+												</select>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Jenis Ujian</td>
+									<td>
+										<select class="form-control ds" name="jenis">
+											<option>UTS</option>	
+											<option>UAS</option>	
+										</select>
+
+									</td>
+								</tr>
+
+								<tr>
+									<td>Mata Kuliah</td>
+									<td>
+										<select class="form-control ds" name="matkul">
+											<?php foreach ($matkul as $key => $v): ?>
+												<option value="<?=$v->id?>"><?=$v->nama ?></option>	
+											<?php endforeach ?>
+										</select>
+
+									</td>
+								</tr>
+								<tr>
+									<td>Jenis Kelamin</td>
+									<td>
+										<ul class="nav nav-pills">			
+											<li><a data-toggle="tab" class="btn ds" onclick="jeniskelamin('L')"><i class="fa fa-male"></i></a></li>
+											<li><a data-toggle="tab" class="btn ds" onclick="jeniskelamin('P')"><i class="fa fa-female"></i></a></li>
+										</ul>	
+
+										<input type="hidden" name="jk" id="jk">
+										
+												<span class="info"></span>									
+											
+
+
+									</td>
+								</tr>	
+
+								<tr>
+									<td>Tanggal Pelaksanaan <span style="color: red"> *</span> </td>
+									<td>
+
+
+				
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="form-group form-group-sm" id="div_kategori">
+              <input autocomplete="off"   id="tgl" value="<?=date('d-m-Y') ?>" type="text" class="form-control reset date" name="tanggal"  autocomplete="off">
+
+												<span class="info"></span>
+				
+            </div>
+          </div>					</td>
+								</tr>
+								<tr>
+									<td>
+										Jam Pelaksanaan
+									</td>
+									<td>												<div class="form-group">
+
+										<div class="col-sm-12  col-xs-12">
+											<div class="row">
+												<div class="col-xs-12 col-sm-6">
+													<div class="input-group">
+														<input type="text" name="stime_perday" class="form-control timepicker ds" value="<?=date('h:i A')?>">
+														<div class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
 														</div>
 													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>Jenis Ujian</td>
-												<td>
-													<select class="form-control ds" name="jenis">
-														<option  <?php if($master->ms_jenis_ujian=='UTS'){
-															echo 'selected=""';
-														} ?> >UTS</option>	
-														<option  <?php if($master->ms_jenis_ujian=='UAS'){
-															echo 'selected=""';
-														} ?>>UAS</option>	
-													</select>
-
-												</td>
-											</tr>
-
-											<tr>
-												<td>Mata Kuliah</td>
-												<td>
-
-													<select class="form-control ds" name="matkul">
-														<?php foreach ($matkul as $key => $v): ?>
-															<option <?php if($master->ms_matkul==$v->id){
-																echo 'selected=""';
-															} ?> value="<?=$v->id?>"><?=$v->nama ?></option>	
-														<?php endforeach ?>
-													</select>
-
-												</td>
-											</tr>
-											<tr>
-												<td>Jenis Kelamin</td>
-												<td>
-													<?php  
-													$classL='';
-													$classP='';
-													if($master->ms_jenis_kel=='L'){
-														$classL="class='active'";
-													}
-													if($master->ms_jenis_kel=='P'){
-														$classP="class='active'";
-													}
-													?>
-													<ul class="nav nav-pills">			
-														<li <?=$classL?> ><a data-toggle="tab" class="btn ds" onclick="jeniskelamin('L')"><i class="fa fa-male"></i></a></li>
-														<li <?=$classP?> ><a data-toggle="tab" class="btn ds" onclick="jeniskelamin('P')"><i class="fa fa-female"></i></a></li>
-													</ul>	
-
-													<input type="hidden" name="jk" id="jk" value="<?=$master->ms_jenis_kel?>">
-
-													<span class="info"></span>									
-
-
-
-												</td>
-											</tr>	
-
-											<tr>
-												<td>Tanggal Pelaksanaan <span style="color: red"> *</span> </td>
-												<td>
-													<div class="col-md-4 col-sm-6 col-xs-12">
-														<div class="form-group form-group-sm" id="div_kategori">
-															<input autocomplete="off" id="tgl" value="<?=date('d-m-Y',strtotime($master->ms_startdate)) ?>" type="text" class="form-control reset date" name="tanggal"  autocomplete="off">
-
-															<span class="info"></span>
-
+												</div>
+												<div class="col-xs-12 col-sm-6">
+													<div class="input-group">
+														<input type="text" name="etime_perday" class="form-control timepicker ds" value="<?=date('h:i A')?>">
+														<div class="input-group-addon">
+															<i class="fa fa-clock-o"></i>
 														</div>
-													</div>					</td>
-												</tr>
-												<tr>
-													<td>
-														Jam Pelaksanaan
-													</td>
-													<td>												<div class="form-group">
-
-														<div class="col-sm-12  col-xs-12">
-															<div class="row">
-																<div class="col-xs-12 col-sm-6">
-																	<div class="input-group">
-																		<input type="text" name="stime_perday" class="form-control timepicker ds" value="<?=date('h:i A', strtotime($master->ms_starttime))?>">
-																		<div class="input-group-addon">
-																			<i class="fa fa-clock-o"></i>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-xs-12 col-sm-6">
-																	<div class="input-group">
-																		<input type="text" name="etime_perday" class="form-control timepicker ds" value="<?=date('h:i A', strtotime($master->ms_endtime))?>">
-																		<div class="input-group-addon">
-																			<i class="fa fa-clock-o"></i>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>									
-													<span class="info"></span>
-												</td>
-											</tr>	
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>									
+											<span class="info"></span>
+								</td>
+							</tr>	
 							<!-- <tr>
 								<td>Waktu (Menit)</td>
 								<td><input type="number" name="waktu" class="form-control ds" value="90">
@@ -248,7 +190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<section class="content" id="detail" style="display:">
+<section class="content" id="detail" style="display:none">
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
@@ -303,177 +245,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            				</div>	
 		            				<div class="col-md-12"> 
 
-				<table class="table borderless table_soal1" width="100%">
-					<tbody id="body_soal"> 
+		            					<table class="table borderless table_soal1" width="100%">
+		            						<tbody id="body_soal"> 
 
-						<?php foreach ($pilihan as $key => $v): ?>
-							<?php  
-							$audio='';
-							$gambar='';
-
-							if($v->sd_audio!=''){
-								$audio='<audio controls><source src="'.base_url().$v->sd_audio.'" type="audio/wav">'.
-								'Your browser does not support the audio element.'.
-								'</audio>';
-							}
-
-							if($v->sd_gambar!=''){
-								$gambar='<img width="300px" height="300px" src="'.base_url().$v->sd_gambar.' ">';
-							}
-
-
-		            								?>
-
-		            								<?php  							
-		            								$html='';
-		            								$a='';
-		            								$b='';
-		            								$c='';
-		            								$d='';
-	//var_dump($v->sd_kunci);exit();
-		            								if($v->sd_kunci=='a'||$v->sd_kunci=='A'){
-		            									$a='checked="checked"';
-		            								}
-		            								if($v->sd_kunci=='b'||$v->sd_kunci=='B'){
-
-		            									$b='checked="checked"';
-		            								}
-		            								if($v->sd_kunci=='c'||$v->sd_kunci=='C'){
-		            									$c='checked="checked"';
-		            								}
-		            								if($v->sd_kunci=='d'||$v->sd_kunci=='D'){
-		            									$d='checked="checked"';
-		            								}
-		            								?>
-
-
-		            								<tr  class="no_soal" id="detail-<?=$v->sd_detailid?>">			
-		            									<td>		
-		            										<table class="table " style="width: 1000px">	
-
-
-		            											<?php if ($v->sd_header!=''): ?> 				
-		            												<tr>
-		            													<td colspan="6">
-		            														<?=$v->sd_header ?> 					
-		            													</td>				
-		            												</tr>			
-		            											<?php endif ?>
-
-
-
-		            											<?php if ($v->sd_subheader!=''): ?> 				
-		            												<tr>
-		            													<td colspan="6">
-		            														<?=$v->sd_subheader ?> 					
-		            													</td>				
-		            												</tr>			
-		            											<?php endif ?>
-
-
-		            											<?php if ($v->sd_cerita!=''): ?> 	
-
-		            												<tr>
-		            													<td colspan="6">
-		            														<?=$v->sd_cerita ?> 					
-		            													</td>				
-		            												</tr>			
-		            											<?php endif ?>
-		            											<tr>
-		            												<td></td>
-		            												<td>
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_master_soal ?>">
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_detailid?>">
-		            													<span class="no"><?=$key+1 ?></span>
-		            												</td>
-		            												<td colspan="3" style="width: 800px">
-		            													<table>
-		            														<tr>
-		            															<td><?=$gambar?>
-		            														</td>
-		            														<tr>
-		            															<td><?=$audio?>
-		            														</td>
-		            														</tr>
-		            														<tr>
-		            															<td>
-		            														<?=$v->sd_soal?></td>
-		            														</tr>
-		            													</table>
-		            														
-		            													
-		            												</td>
-		            												<td style="width: 13%">
-		            													<button class="btn btn-xs btn-danger" onclick="hapus('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','pilihan')" >
-		            														<i class="fa fa-minus"></i>
-		            													</button>
-		            													<button class="btn btn-xs btn-warning" onclick="edit_detail('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','pilihan')" >
-		            														<i class="fa fa-pencil"></i>
-		            													</button>
-		            												</td>
-
-
-		            											</tr>
-
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													a.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban<?=$v->sd_detailid?>" value="a" <?=$a ?> disabled>
-		            												</td>
-		            												<td colspan="1"><?=$v->sd_a ?></td>
-		            												<td></td>
-		            											</tr>
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													b.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban<?=$v->sd_detailid?>" value="b" <?=$b ?> disabled>
-		            												</td>
-		            												<td colspan="1"><?=$v->sd_b ?></td>
-		            												<td></td>
-		            											</tr>
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													c.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban<?=$v->sd_detailid?>" value="c" <?=$c ?> disabled>
-		            												</td>
-		            												<td colspan="1"><?=$v->sd_c ?></td>
-		            												<td></td>
-		            											</tr>
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													d.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban<?=$v->sd_detailid?>" value="d" <?=$d ?> disabled>
-		            												</td>
-		            												<td colspan="1"><?=$v->sd_d ?></td>
-		            												<td></td>
-		            											</tr>
-
-		            										</table>
-		            									</td>
-		            								</tr>
-
-
-
-
-		            							<?php endforeach ?>
-
-
+		            							
 		            						</tbody>
 		            					</table>
 		            				</div>
@@ -544,104 +319,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		            					<table class="table borderless table_soal2" width="100%">
 		            						<tbody id="body_soal_bs"> 
-
-
-		            							<?php foreach ($bs as $key => $v): ?>
-		            								<?php  
-		            								$audio='';
-
-		            								if($v->sd_audio!=''){
-		            									$audio='<audio controls><source src="'.base_url().$v->sd_audio.'" type="audio/wav">'.
-		            									'Your browser does not support the audio element.'.
-		            									'</audio><br>';
-		            								}
-
-
-		            								?>
-		            								<?php  							
-		            								$html='';
-		            								$a='';
-		            								$b='';
-	//var_dump($v->sd_kunci);exit();
-		            								if($v->sd_kunci=='a'||$v->sd_kunci=='A'){
-		            									$a='checked="checked"';
-		            								}
-		            								if($v->sd_kunci=='b'||$v->sd_kunci=='B'){
-
-		            									$b='checked="checked"';
-		            								}
-
-		            								?>
-
-
-		            								<tr  class="no_soal" id="detail2-<?=$v->sd_detailid?>">			
-		            									<td width="100%">		
-		            										<table class="table" width="100%">	
-
-		            											<tr>
-		            												<td></td>
-		            												<td>
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_master_soal ?>">
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_detailid?>">
-		            													<span class="no"><?=$key+1 ?></span>
-		            												</td>
-		            												<td colspan="3" style="width: 800px">
-		            													<table>
-		            														<tr>
-		            															<td><?=$audio?>
-		            														</td>
-		            														</tr>
-		            														<tr>
-		            															<td>
-		            														<?=$v->sd_soal?></td>
-		            														</tr>
-		            													</table>
-		            														
-		            													
-		            												</td>
-		            												<td style="width: 13%">
-		            													<button class="btn btn-xs btn-danger" onclick="hapus('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','bs')" >
-		            														<i class="fa fa-minus"></i>
-		            													</button>
-		            													<button class="btn btn-xs btn-warning" onclick="edit_detail('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','bs')" >
-		            														<i class="fa fa-pencil"></i>
-		            													</button>
-		            												</td>
-		            											</tr>
-
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													a.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban-bs<?=$v->sd_detailid?>" value="a" <?=$a ?> disabled>
-		            												</td>
-		            												<td colspan="1">Benar</td>
-		            											</tr>
-		            											<tr>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px"></td>
-		            												<td style="width: 10px">
-		            													b.
-		            												</td>
-		            												<td style="width: 10px">
-		            													<input type="radio" name="jawaban-bs<?=$v->sd_detailid?>" value="b" <?=$b ?> disabled>
-		            												</td>
-		            												<td colspan="1">Salah</td>
-		            											</tr>
-
-		            										</table>
-		            									</td>
-		            								</tr>
-
-
-
-
-		            							<?php endforeach ?>
-
-
 
 
 		            						</tbody>
@@ -726,66 +403,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            						<tbody id="body_soal_esai"> 
 
 
-		            							<?php foreach ($esai as $key => $v): ?>
-
-		            								<?php  
-		            								$audio='';
-
-		            								if($v->sd_audio!=''){
-		            									$audio='<audio controls><source src="'.base_url().$v->sd_audio.'" type="audio/wav">'.
-		            									'Your browser does not support the audio element.'.
-		            									'</audio><br>';
-		            								}
-
-
-		            								?>
-
-		            								<tr  class="no_soal" id="detail3-<?=$v->sd_detailid?>">			
-		            									<td width="100%">		
-		            										<table class="table" width="100%">	
-
-		            											<tr>
-		            												<td></td>
-		            												<td>
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_master_soal ?>">
-		            													<input type="hidden" name="sd_master_soal" value="<?=$v->sd_detailid?>">
-		            													<span class="no"><?=$key+1 ?></span>
-		            												</td>
-		            												<td colspan="3" style="width: 800px">
-		            													<table>
-		            														<tr>
-		            															<td><?=$audio?>
-		            														</td>
-		            														</tr>
-		            														<tr>
-		            															<td>
-		            														<?=$v->sd_soal?></td>
-		            														</tr>
-		            													</table>
-		            														
-		            													
-		            												</td>
-		            												<td style="width: 13%">
-		            													<button class="btn btn-xs btn-danger" onclick="hapus('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','esai')" >
-		            														<i class="fa fa-minus"></i>
-		            													</button>
-		            													<button class="btn btn-xs btn-warning" onclick="edit_detail('<?=$v->sd_master_soal ?>','<?=$v->sd_detailid ?>','esai')" >
-		            														<i class="fa fa-pencil"></i>
-		            													</button>
-		            												</td>
-		            											</tr>
-
-		            										</table>
-		            									</td>
-		            								</tr>
-
-
-
-
-		            							<?php endforeach ?>
-
-
-
+		            						
 
 		            						</tbody>
 		            					</table>
@@ -847,7 +465,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="modal-body">
 
-						<input type="hidden" name="master_id" class="master_soal" value="<?=$master->ms_id ?>">
+						<input type="hidden" name="master_id" class="master_soal" value="">
 
 
 						<div id="tdetail" class="collapse">
@@ -890,8 +508,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td>Soal</td>
 								<td colspan="2"><textarea class="form-control" name="soal" id="soal"></textarea>
 									<span class="info_soal_pilihan"></span>
-									<input type="hidden" name="jenis" value="pilihan" ></td>	
-									<input type="hidden" name="sd_master_soal" value="" class="reset1"></td>	
+									<input type="hidden" name="jenis" value="pilihan" >	
+									<input type="hidden" name="sd_master_soal" value="" class="reset1">
 									<input type="hidden" name="sd_detailid" value="" class="reset1">
 									<input type="hidden" name="sd_gambar" value="" class="reset1">
 									<input type="hidden" name="sd_audio" value="" class="reset1">
@@ -973,7 +591,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<h4 class="modal-title modal-title2">Tambah Soal Benar/Salah</h4>
 						</div>
 						<div class="modal-body">
-							<input type="hidden" name="master_id" class="master_soal" value="<?=$master->ms_id ?>">
+							<input type="hidden" name="master_id" class="master_soal" value="">
 
 							<table class="table">
 								<tr>
@@ -981,40 +599,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<td colspan="2">
 										<textarea class="form-control reset2" name="soal" id="soal2"></textarea>
 										<span class="info_soal_bs"></span>
-										<input type="hidden" name="jenis" value="bs"></td>	
-										<input type="hidden" name="sd_master_soal" value="" class="reset2"></td>	
+										<input type="hidden" name="jenis" value="bs">
+										<input type="hidden" name="sd_master_soal" value="" class="reset2">	
 										<input type="hidden" name="sd_detailid" value="" class="reset2">
+
 										<input type="hidden" name="sd_gambar" value="" class="reset2">
 										<input type="hidden" name="sd_audio" value="" class="reset2">
-									</td>								
+									</td>					
+												
 									</tr>
 									<tr>
 										<td>Upload Gambar</td>
-										<td colspan="2"><input type="file" name="gambar" class="reset2"></td>								
+										<td colspan="2"><input type="file" name="gambar" class="reset2">
+										</td>								
 									</tr>
 									<tr>
 										<td>Upload Audio</td>
 										<td colspan="2"><input type="file" name="berkas" class="reset2"></td>								
 									</tr>
 								</table>
-								<table class="table" width="100%">
+								<table class="table">
 									<tr>
-										<th width="50px">-</th>
-										<th width="150px" class="info_kunci_bs">Kunci Jawaban
-										</th>
 										<th>-</th>
+										<th width="10%" class="info_kunci_bs">Kunci Jawaban
+										</th>
+										<th>Jawaban</th>
 									</tr>
 
 									<tr>
 										<td></td>       				
 										<td><input type="radio" name="kunci" value="a"></td>
-										<td>Benar
+										<td><input type="text" name="a" class="form-control reset2">
+											<span class="info_bs"></span>
 										</td>
 									</tr>
 									<tr>
 										<td></td>       				
 										<td><input type="radio" name="kunci" value="b"></td>
-										<td>Salah
+										<td><input type="text" name="b" class="form-control reset2">
+											<span class="info_bs"></span>
 										</td>
 									</tr>		    						
 								</table>
@@ -1044,26 +667,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<h4 class="modal-title modal-title3">Tambah Soal Esai</h4>
 							</div>
 							<div class="modal-body">
-								<input type="hidden" name="master_id" class="master_soal" value="<?=$master->ms_id ?>">
+								<input type="hidden" name="master_id" class="master_soal" value="">
 								<table class="table">
 									<tr>
 										<td>Soal</td>
 										<td colspan="2"><textarea class="form-control" name="soal" id="soal3"></textarea>
 											<span class="info_soal_esai"></span>
-											<input type="hidden" name="jenis" value="esai"></td>	
-											<input type="hidden" name="sd_master_soal" value="" class="reset3"></td>	
-											<input type="hidden" name="sd_detailid" value="" class="reset3"></td>	
-
-											<input type="hidden" name="sd_gambar" value="" class="reset3">
-											<input type="hidden" name="sd_audio" value="" class="reset3">							
+											<input type="hidden" name="jenis" value="esai">	
+											<input type="hidden" name="sd_master_soal" value="">	
+											<input type="hidden" name="sd_detailid" value="">
+										<input type="hidden" name="sd_gambar" value="" class="reset3">
+										<input type="hidden" name="sd_audio" value="" class="reset3">
+										</td>								
 										</tr>
 										<tr>
 											<td>Upload Gambar</td>
-											<td colspan="2"><input type="file" name="gambar" class="reset1"></td>								
+											<td colspan="2"><input type="file" name="gambar" class="reset3"></td>								
 										</tr>
 										<tr>
 											<td>Upload Audio</td>
-											<td colspan="2"><input type="file" name="berkas" class="reset1"></td>								
+											<td colspan="2"><input type="file" name="berkas" class="reset3"></td>								
 										</tr>
 									</table>
 						<!-- <table class="table">
@@ -1114,28 +737,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			config.enterMode = CKEDITOR.ENTER_BR;
 
 		};
-
-
-CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
-	'Comic Sans MS/Comic Sans MS, cursive;' +
-	'Courier New/Courier New, Courier, monospace;' +
-	'Georgia/Georgia, serif;' +
-	'Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;' +
-	'Tahoma/Tahoma, Geneva, sans-serif;' +
-	'Times New Roman/Times New Roman, Times, serif;' +
-	'Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;' +
-	'Verdana/Verdana, Geneva, sans-serif';
-
-	CKEDITOR.config.font_style = {
-	element: 'span',
-	styles: { 'font-family': '#(family)' },
-	overrides: [ {
-		element: 'font', attributes: { 'face': null }
-	} ]
-};
-
-
-		CKEDITOR.config.autoParagraph = false;
 		var toolbars = [{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline'] },{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },{ name: 'links', items: [ 'Link', 'Unlink' ] },];
 		CKEDITOR.replace('lheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
 		CKEDITOR.replace('subheader', {height:150,toolbar: toolbars,removePlugins: 'elementspath',resize_enabled: false});
@@ -1189,13 +790,17 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 									$('.info_'+key+'_pilihan').html(val);
 
 								});
-								$().toastmessage('showToast', {
+
+								if(data.error!=undefined){
+						$().toastmessage('showToast', {
 									text     : data.error,
 									position : 'top-center',
 									type     : 'error',
 								});
+						}
 								$('#form_soal .simpan').attr('disabled',false);
 							}else{	
+
 								if(data.is_use=='update'){
 									$('#detail-'+data.detailid).replaceWith(data.view)
 								}
@@ -1250,13 +855,20 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 						dataType: 'json',
 						success:function(data, textStatus, jqXHR){
 							if(!data.status){
-								$('#form_soal2 .simpan').attr('disabled',false);
 								$.each(data.e, function(key, val){
 									console.log(key)
 									$('[name="'+key+'"] + .info_bs').html(val);
 									$('.info_'+key+'_bs').html(val);
 
 								});
+								if(data.error!=undefined){
+						$().toastmessage('showToast', {
+									text     : data.error,
+									position : 'top-center',
+									type     : 'error',
+								});
+						}
+								$('#form_soal2 .simpan').attr('disabled',false);
 							}else{	
 								if(data.is_use=='update'){
 									$('#detail2-'+data.detailid).replaceWith(data.view)
@@ -1274,13 +886,13 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 								reset_soal2();
 								$('#myModal2').modal('hide');
 								$('#form_soal2 .simpan').attr('disabled',false);
-							}
-						},
-						error: function(jqXHR, textStatus, errorThrown){
-							$('#form_soal2 .simpan').attr('disabled',false);
-							alert('Error,something goes wrong');
-						}
-					});
+		}
+},
+error: function(jqXHR, textStatus, errorThrown){
+	$('#form_soal2 .simpan').attr('disabled',false);
+	alert('Error,something goes wrong');
+}
+});
 				});
 	});
 
@@ -1314,6 +926,14 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 							$('.info_'+key+'_esai').html(val);
 
 						});
+						if(data.error!=undefined){
+						$().toastmessage('showToast', {
+									text     : data.error,
+									position : 'top-center',
+									type     : 'error',
+								});
+						}
+						$('#form_soal3 .simpan').attr('disabled',false);
 					}else{	
 						if(data.is_use=='update'){
 							$('#detail3-'+data.detailid).replaceWith(data.view)
@@ -1411,7 +1031,7 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 		$('form#form_master').on('submit', function(e) {
 			e.preventDefault();				
 			$.ajax({
-				url : '<?php echo base_url("panel/bank_soal/update"); ?>',
+				url : '<?php echo base_url("panel/bank_soal/insert"); ?>',
 				type: "POST",
 				data : $('#form_master').serialize(),
 				dataType: 'json',
@@ -1469,11 +1089,16 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 							type     : 'error',
 							close    : function () {
                   //window.location = "<?=current_url() ?>";
-              				}
-          				});
+              }
+          });
 					}else if(data.status){
 						$('.upload_soal1').val('');
 						$('#body_soal').append(data.view)
+								var n=1;
+								$(".table_soal1 > tbody  > tr.no_soal").each(function(idx,tr) {
+									$(this).find("span").text(n)
+									n++;
+								});
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1522,8 +1147,13 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
               }
           });
 					}else if(data.status){
-						$('.upload_soal1').val('');
+						$('.upload_soal2').val('');
 						$('#body_soal_bs').append(data.view)
+								var n=1;
+								$(".table_soal2 > tbody  > tr.no_soal").each(function(idx,tr) {
+									$(this).find("span").text(n)
+									n++;
+								});
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1577,6 +1207,14 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 					}else if(data.status){
 						$('.upload_soal3').val('');
 						$('#body_soal_esai').append(data.view)
+
+						var n=1;
+								$(".table_soal3 > tbody  > tr.no_soal").each(function(idx,tr) {
+									$(this).find("span").text(n)
+									n++;
+								});
+
+
 					}else{
 						$().toastmessage('showToast', {
 							text     : data.msg,
@@ -1632,7 +1270,7 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 					$("#form_soal input[name='sd_master_soal']").val(data.pilihan.sd_master_soal);
 					$("#form_soal input[name='sd_detailid']").val(data.pilihan.sd_detailid);	
 					$("#form_soal input[name='sd_audio']").val(data.pilihan.sd_audio);
-					$("#form_soal input[name='sd_gambar']").val(data.pilihan.sd_gambar);		
+					$("#form_soal input[name='sd_gambar']").val(data.pilihan.sd_gambar);	
 					$('#myModal').modal('show');		
 				}else if(tipe=='bs'){
 					$('.modal-title2').text('Edit Soal Benar/Salah');
@@ -1651,9 +1289,9 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 					$('.modal-title3').text('Edit Soal Esai');
 					CKEDITOR.instances['soal3'].setData(data.esai.sd_soal);
 					$("#form_soal3 input[name='sd_master_soal']").val(data.esai.sd_master_soal);
-					$("#form_soal3 input[name='sd_detailid']").val(data.esai.sd_detailid);	
+					$("#form_soal3 input[name='sd_detailid']").val(data.esai.sd_detailid);
 					$("#form_soal3 input[name='sd_audio']").val(data.esai.sd_audio);
-					$("#form_soal3 input[name='sd_gambar']").val(data.esai.sd_gambar);
+					$("#form_soal3 input[name='sd_gambar']").val(data.esai.sd_gambar);	
 					$('#myModal3').modal('show');
 				}
 
@@ -1739,5 +1377,3 @@ CKEDITOR.config.font_names = 'Arial/Arial, Helvetica, sans-serif;' +
 
 	}
 </script>
-
-<?php endif ?>

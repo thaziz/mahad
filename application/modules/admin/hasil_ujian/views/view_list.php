@@ -38,7 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Kelas</th>
                   <th>Pilihan Ganda</th>   
                   <th>Benar Salah</th>
-                  <th>Esai</th>                                    
+                  <th>Esai</th>       
+                  <th>Total Nilai</th>                                    
                   <th>&nbsp;</th>
                 </tr>
               </thead>
@@ -101,14 +102,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       { "sClass": "center", "aTargets": [ 3 ], "data":3 },
       { "sClass": "center", "aTargets": [ 4 ], "data":4 },
       { "sClass": "center", "aTargets": [ 5 ], "data":5 },
-      { "sClass": "center", "aTargets": [ 6 ],
+      { "sClass": "center", "aTargets": [ 6 ], "data":6 },
+      { "sClass": "center", "aTargets": [ 7 ],
         "mRender": function(data, type, full) {
             <?php if($rules['v']){ ?>
           return ''
               <?php } ?>
               <?php if($rules['e']){?>
-              + ''+'<a href=<?=base_url('panel/hasil_ujian/detail_ujian');?>/' + full[6]
-              + ' class="btn btn-info btn-xs btn-col icon-green" '+full[6]+'><i class="fa fa-list"></i> Detail'
+              + ''+'<a href=<?=base_url('panel/hasil_ujian/detail_ujian');?>/' + full[7]
+              + ' class="btn btn-info btn-xs btn-col icon-green" '+full[7]+'><i class="fa fa-list"></i> Detail'
               <?php }?>
               '</a>';
         },

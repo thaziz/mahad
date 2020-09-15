@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Matkul</th>
                   <th>Waktu Ujian</th>
                   <th>Status</th>
-                  <th>Nilai</th>
+                  <!-- <th>Nilai</th> -->
                   <th>&nbsp;</th>
                 </tr>
               </thead>
@@ -96,22 +96,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       { "sClass": "center", "aTargets": [ 0 ], "data":0 },
       { "sClass": "center", "aTargets": [ 1 ], "data":1 },
       { "sClass": "center", "aTargets": [ 2 ], "data":2 },
-      { "sClass": "center", "aTargets": [ 3 ], "data":3 },
+      /*{ "sClass": "center", "aTargets": [ 3 ], "data":3 },*/
 
       
       
-      { "sClass": "center", "aTargets": [ 4 ],
+      { "sClass": "center", "aTargets": [ 3 ],
         "mRender": function(data, type, full) {
-
+          console.log(full[2])
+            $edit=(full[2]=='Selesai'?'disabled':'');
             <?php if($rules['v']){ ?>
           return ''
               <?php } ?>
               <?php if($rules['e']){?>
-              + ''+'<a href=<?=base_url('panel/ujian/ujian_ol');?>/' + full[4]
-              + ' class="btn btn-info btn-xs btn-col icon-green" '+full[5]+'><i class="fa fa-pencil"></i> Mulai Ujian'
+              + ''+'<a '+$edit+' href=<?=base_url('panel/ujian/ujian_ol');?>/' + full[3]
+              + ' class="btn btn-info btn-xs btn-col icon-green" '+full[4]+'><i class="fa fa-pencil"></i> Mulai Ujian'
               <?php }?>
               <?php if($rules['d']){?>
-              + '</a>'+'<a  href="javascript:;" onclick="remove(\'' + full[7] + '\');" id="btn-delete" class="btn btn-danger btn-xs btn-col icon-black"><i class="fa fa-close"></i> ' + 'Delete'
+              + '</a>'+'<a  href="javascript:;" onclick="remove(\'' + full[3] + '\');" id="btn-delete" class="btn btn-danger btn-xs btn-col icon-black"><i class="fa fa-close"></i> ' + 'Delete'
               <?php }?>
               + '</a>';
         },
