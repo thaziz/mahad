@@ -52,7 +52,7 @@ class Ujian extends MX_Controller {
             }
 				$no++;
 				$row = array();	            
-				$row[] = $admin->subject_ar_name.($admin->subject_ar_name);	
+				$row[] = $admin->subject_ar_name;	
 				$row[] = $admin->ms_startdate.' '.$admin->ms_starttime.' - '.$admin->ms_endtime;
 				$row[] = $admin->u_status=='1'?'Selesai':'Proses';
 				/*$row[] = $admin->u_nilai_total;*/

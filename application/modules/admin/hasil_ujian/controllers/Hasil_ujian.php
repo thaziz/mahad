@@ -50,7 +50,7 @@ class Hasil_ujian extends MX_Controller {
             }
 				$no++;
 				$row = array();	            
-				$row[] = $admin->subject_ar_name.($admin->subject_ar_name);
+				$row[] = $admin->subject_ar_name;
                 $row[] =$admin->ms_level.' '.$admin->ms_kelas;	
 				$row[] = $admin->ms_startdate.' '.$admin->ms_starttime.' '.$admin->ms_endtime;
 				$row[] = $admin->ms_id;				
