@@ -90,7 +90,7 @@ class Hasil_ujian extends MX_Controller {
                 $no++;
                 $row = array();             
                 $row[] = $admin->adm_name;
-                $row[] = $admin->subject_ar_name.($admin->subject_ar_name);
+                $row[] = $admin->subject_ar_name;
                 $row[] =$admin->ms_level.' '.$admin->ms_kelas;  
                 $row[] =$admin->u_nilai_pilihan;
                 $row[] =$admin->u_nilai_benarsalah;

@@ -355,12 +355,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</td>
 														<td style="width: 0.5em">
 															<input <?=$ja?> onchange="setjawaban('bs','<?=$v->sd_detailid?>','<?=$a[1];?>','<?=$idx?>')" type="radio" name="jawaban_bs<?=$v->sd_detailid;?>" value="<?=$a[1]?>" class="ds"></td>
-															<td colspan="1"><?=$a[0];?></td>
+															<td colspan="1"><?=$a[0];?>Benar</td>
 															<tr> 
 																<td></td><td></td>
 																<td style="width: 0.5em">
 																	<input <?=$jb?> onchange="setjawaban('bs','<?=$v->sd_detailid?>','<?=$b[1];?>','<?=$idx?>')"  type="radio" name="jawaban_bs<?=$v->sd_detailid?>" value="<?=$b[1]?>" class="ds"></td>
-																<td colspan="1"><?=$b[0];?></td>
+																<td colspan="1"><?=$b[0];?>Salah</td>
 															</tr></tr>
 
 
